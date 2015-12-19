@@ -115,6 +115,8 @@ section {
 
 body {
 	line-height: 1;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 ol,
@@ -329,11 +331,13 @@ legend span {
 sub {
 	font-size: xx-small;
 	vertical-align: sub;
+	line-height: 100%;
 }
 
 sup {
 	font-size: xx-small;
 	vertical-align: super;
+	line-height: 100%;
 }
 
 code,
@@ -349,6 +353,16 @@ strike {
 
 ins {
 	text-decoration: underline;
+}
+
+big {
+    font-weight: bold;
+}
+
+acronym,
+abbr {
+    border-bottom: .1em dotted;
+    cursor: help;
 }
 
 /* #Responsive Menu
@@ -395,9 +409,9 @@ h1.page-title {
 }
 
 #page-container {
-	width: 960px;
-	margin: 0;
-	margin-bottom: 40px;
+	width: 920px;
+	padding: 0 20px;
+	margin: 0 0 40px 0;
 }
 
 #page-container,
@@ -417,18 +431,6 @@ h1.page-title {
 	float: left;
 }
 
-#page-container > div,
-#page-container > p,
-#page-container > a,
-#page-container > span,
-#page-container > img,
-#page-container > ul,
-#page-container > h1,
-#page-container > h2,
-#page-container > h3,
-#page-container > h4,
-#page-container > h5,
-#page-container > h6,
 #footer .container > ul > li {
 	margin-left: 20px !important;
 	margin-right: 20px !important;
@@ -437,8 +439,9 @@ h1.page-title {
 	float: none;
 }
 
-#sidebar-container,
-#page-container > hr {
+.wp-audio-shortcode { margin-bottom: 20px; }
+
+#sidebar-container {
 	margin-left: 20px !important;
 	margin-right: 20px !important;
 }
@@ -453,35 +456,10 @@ h1.page-title {
 	margin-top: 0px;
 }
 
-.full-width,
-.one-half,
-.one-third,
-.two-thirds,
-.one-fourth,
-.three-fourths {
-	display: inline-block;
-	vertical-align: top;
-	float: none;
-}
-
-/* No sidebar: Container= 960 */
-#page-container > .full-width    { width: 920px; }
-#page-container > .one-half	     { width: 440px; }
-#page-container > .one-third     { width: 280px; }
-#page-container > .two-thirds    { width: 600px; }
-#page-container > .one-fourth,
-#footer div > ul > li            { width: 200px; }
-#page-container > .three-fourths { width: 680px; }
+#footer div > ul > li { width: 200px; display: inline-block; }
 
 /* With Sidebar: Container= 720 */
-#page-container.with-sidebar { width: 720px; }
-
-#page-container.with-sidebar > .full-width    { width: 680px; }
-#page-container.with-sidebar > .one-half      { width: 320px; }
-#page-container.with-sidebar > .one-third     { width: 200px; }
-#page-container.with-sidebar > .two-thirds    { width: 440px; }
-#page-container.with-sidebar > .one-fourth    { width: 140px; }
-#page-container.with-sidebar > .three-fourths { width: 500px; }
+#page-container.with-sidebar { width: 680px; padding: 0 20px; }
 
 #sidebar-container { width: 200px; }
 
@@ -523,23 +501,11 @@ h1.page-title {
 	#page-container { width: 766px; }
 
 	/* No sidebar: Container= 766 */
-	#page-container > .full-width    { width: 736px; }
-	#page-container > .one-half      { width: 353px; }
-	#page-container > .one-third     { width: 225px; }
-	#page-container > .two-thirds    { width: 480px; }
-	#page-container > .one-fourth,
 	#footer div ul > .one-fourth     { width: 161px; }
-	#page-container > .three-fourths { width: 544px; }
 	
 	/* With Sidebar: Container= 576 */
 	#page-container.with-sidebar { width: 576px; }
 	
-	#page-container.with-sidebar > .full-width    { width: 546px; }
-	#page-container.with-sidebar > .one-half      { width: 258px; }
-	#page-container.with-sidebar > .one-third     { width: 162px; }
-	#page-container.with-sidebar > .two-thirds    { width: 354px; }
-	#page-container.with-sidebar > .one-fourth    { width: 114px; }
-	#page-container.with-sidebar > .three-fourths { width: 402px; }
 	#sidebar-container { width: 172px; }
 }
 
@@ -579,13 +545,7 @@ h1.page-title {
 	#page-container { width: 298px; }
 
 	/* No sidebar: Container= 300 */
-	#page-container > .full-width,
-	#page-container > .one-half,
-	#page-container > .one-third,
-	#page-container > .two-thirds,
-	#page-container > .one-fourth,
-	#footer div ul > .one-fourth,
-	#page-container > .three-fourths { width: 280px; }
+	#footer div ul > .one-fourth { width: 280px; }
 
 	/* With Sidebar: Container= 300 */
 	#page-container.with-sidebar { width: 298px; }
@@ -596,13 +556,6 @@ h1.page-title {
 	}
 
 	#sidebar { width: 300px; }
-
-	#page-container.with-sidebar > .full-width,
-	#page-container.with-sidebar > .one-half,
-	#page-container.with-sidebar > .one-third,
-	#page-container.with-sidebar > .two-thirds,
-	#page-container.with-sidebar > .one-fourth,
-	#page-container.with-sidebar > .three-fourths { width: 280px; }
 
 }
 
@@ -642,13 +595,7 @@ h1.page-title {
 	#page-container { width: 420px; }
 
 	/* No sidebar: Container= 420 */
-	#page-container > .full-width,
-	#page-container > .one-half,
-	#page-container > .one-third,
-	#page-container > .two-thirds,
-	#page-container > .one-fourth,
-	#footer div ul > .one-fourth,
-	#page-container > .three-fourths { width: 400px; }
+	#footer div ul > .one-fourth { width: 400px; }
 
 	/* With Sidebar: Container= 420 */
 	#page-container.with-sidebar { width: 420px; }
@@ -659,13 +606,6 @@ h1.page-title {
 	}
 
 	#sidebar { width: 400px; }
-
-	#page-container.with-sidebar > .full-width,
-	#page-container.with-sidebar > .one-half,
-	#page-container.with-sidebar > .one-third,
-	#page-container.with-sidebar > .two-thirds,
-	#page-container.with-sidebar > .one-fourth,
-	#page-container.with-sidebar > .three-fourths { width: 400px; }
 
 }
 

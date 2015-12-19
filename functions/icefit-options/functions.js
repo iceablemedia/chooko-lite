@@ -7,8 +7,8 @@
  * Admin Settings Panel JS
  *
  */
-var icefit_admin_panel;
-(function(jQuery){icefit_admin_panel={
+var chooko_admin_panel;
+(function(jQuery){chooko_admin_panel={
 	init:function(){
 		//admin panel
 		var icf_title;
@@ -36,9 +36,9 @@ var icefit_admin_panel;
 			}
 			var serializedReturn = newValues();
 			var data = {
-				action: 'icefit_settings_ajax_post_action',
+				action: 'chooko_settings_ajax_post_action',
 				data: serializedReturn,
-				icefit_settings_nonce: jQuery('#icefit_settings_nonce').val()
+				chooko_settings_nonce: jQuery('#chooko_settings_nonce').val()
 			};
 			jQuery.post(ajaxurl, data);
 			jQuery('#ajax-result').html('Settings saved.').fadeIn("normal").delay('1000').fadeOut("normal");
@@ -49,7 +49,7 @@ var icefit_admin_panel;
 		jQuery('#icefit-reset-button').click(function() {
 			var answer = confirm("Are you sure you want to reset ALL settings for this theme to default values ?");
 			if (answer) {
-				var data = { action: 'icefit_settings_reset_ajax_post_action' };
+				var data = { action: 'chooko_settings_reset_ajax_post_action' };
 				jQuery.post(ajaxurl, data);
 				setTimeout("location.reload(true);",300);
 			}
@@ -59,9 +59,5 @@ var icefit_admin_panel;
 };
 
 jQuery(document).ready(function(){
-	icefit_admin_panel.init()	
+	chooko_admin_panel.init()	
 })})(jQuery);
-
-jQuery(document).ready(function($){
-    $('.icefit_input_color').wpColorPicker();
-});

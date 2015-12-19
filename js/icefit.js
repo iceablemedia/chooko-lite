@@ -8,20 +8,6 @@
  *
  */
 
-/* --- Flexslider --- */
-
-jQuery(window).load(function() {
-	jQuery('.flexslider').flexslider({
-	controlsContainer: ".flexslider-container",
-	animation: "slide",
-	slideshowSpeed: 4000,
-	controlNav: false, 
-	directionNav: true,
-	prevText: "",
-	nextText: "",
-	});
-});
-
 /* --- (document).ready function wrap --- */
 
 jQuery(document).ready(function($){ 
@@ -43,13 +29,8 @@ jQuery(document).ready(function($){
 		dropShadows:	false,	// completely disable drop shadows by setting this to false
 	});
 
-	/*--- Hookup PrettyPhoto ---*/
-
-	$("a[rel^='prettyPhoto']").prettyPhoto({
-		social_tools: false,
-		show_title: false,
-		theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
-	});
+	/* Remove empty comment reply link wrappers */
+	$('div.reply').filter(function() {return $.trim($(this).text()) === ''}).remove()
 
 	/*--- End of $(document).ready(function() ---*/
 

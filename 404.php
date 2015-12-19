@@ -12,22 +12,26 @@
 
 <?php get_header(); ?>
 
-	<!-- BEGIN MAIN CONTENT -->
 	<div class="container" id="main-content">
 
+		<h1 class="page-title"><?php _e('404', 'chooko'); ?></h1>
 
-	<!-- BEGIN CONTENT COLUMN -->
-	<div class="sixteen columns">
-		<div <?php post_class(); ?>>
-			<h1 class="page-title"><?php _e('404', 'icefit'); ?></h1>
+		<div id="page-container" class="left with-sidebar">
 
-			<h2><?php _e('Not Found', 'icefit'); ?></h2>
-			<p><?php _e('What you are looking for isn\'t here...', 'icefit'); ?></p>
+			<h2><?php _e('Page Not Found', 'chooko'); ?></h2>
+			<p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p>
+			<p><?php _e('Maybe a search will help ?', 'chooko'); ?></p>
+			<?php get_search_form(); ?>
 
 		</div>
-	</div>
-	<!-- END CONTENT COLUMN -->
-	</div>
-	<!-- END MAIN CONTENT -->
+		<!-- End page container -->
 
+		<div id="sidebar-container" class="right">
+			<ul id="sidebar">
+			   <?php dynamic_sidebar( 'sidebar' ); ?>
+			</ul>
+		</div>		
+		<!-- End sidebar -->
+	</div>
+	<!-- End main content -->
 <?php get_footer(); ?>

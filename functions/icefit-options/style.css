@@ -72,24 +72,9 @@
 						background-repeat: no-repeat;
 					}
 					
-					.icefit-admin-panel-menu-link.home    { background-image: url('img/home.png'); }
-					.icefit-admin-panel-menu-link.list    { background-image: url('img/list.png'); }
-					.icefit-admin-panel-menu-link.recycle { background-image: url('img/recycle.png'); }
-					.icefit-admin-panel-menu-link.work    { background-image: url('img/work.png'); }
-					.icefit-admin-panel-menu-link.bulb    { background-image: url('img/bulb.png'); }
-					.icefit-admin-panel-menu-link.chart   { background-image: url('img/chart.png'); }
-					.icefit-admin-panel-menu-link.target  { background-image: url('img/target.png'); }
-					.icefit-admin-panel-menu-link.clock   { background-image: url('img/clock.png'); }
 					.icefit-admin-panel-menu-link.control { background-image: url('img/control.png'); }
-					.icefit-admin-panel-menu-link.mail    { background-image: url('img/mail.png'); }
-					.icefit-admin-panel-menu-link.lock    { background-image: url('img/lock.png'); }
-					.icefit-admin-panel-menu-link.network { background-image: url('img/network.png'); }
 					.icefit-admin-panel-menu-link.picture { background-image: url('img/picture.png'); }
-					.icefit-admin-panel-menu-link.power   { background-image: url('img/power.png'); }
-					.icefit-admin-panel-menu-link.down    { background-image: url('img/down.png'); }
-					.icefit-admin-panel-menu-link.up      { background-image: url('img/up.png'); }
-					.icefit-admin-panel-menu-link.tv      { background-image: url('img/tv.png'); }
-					
+					.icefit-admin-panel-menu-link.down    { background-image: url('img/down.png'); }					
 					
 					#icefit-admin-panel-menu ul li {
 						border-bottom: 1px solid #000;
@@ -143,19 +128,19 @@
 			margin-bottom: 5px;
 		}
 	
-		#icefit-admin-panel-content .icefit_upload_button,
-		#icefit-admin-panel-content .icefit_remove_button {
+		#icefit-admin-panel-content .chooko_upload_button,
+		#icefit-admin-panel-content .chooko_remove_button {
 			border-color: #DDD;
 			background: #F9F9F9;
 			padding: 4px 7px;
 			margin: 10px 0px;
 		}
 	
-		#icefit-admin-panel-content .icefit_remove_button { color: #FF6666;}
-		#icefit-admin-panel-content .icefit_upload_button:hover,
-		#icefit-admin-panel-content .icefit_remove_button:hover { border-color: #aaa; }
+		#icefit-admin-panel-content .chooko_remove_button { color: #FF6666;}
+		#icefit-admin-panel-content .chooko_upload_button:hover,
+		#icefit-admin-panel-content .chooko_remove_button:hover { border-color: #aaa; }
 
-		#icefit-admin-panel-content .icefit_image_preview {
+		#icefit-admin-panel-content .chooko_image_preview {
 			border: 1px solid #DDD;
 			padding: 10px;
 			background-color: #F9F9F9;
@@ -237,8 +222,8 @@
 #icefit-admin-panel-footer-submit #icefit-reset-button-no-js,
 .no-js #icefit-admin-panel-footer-submit #submit-button,
 .no-js #icefit-admin-panel-footer-submit #icefit-reset-button,
-.no-js .icefit_upload_button,
-.no-js .icefit_remove_button {
+.no-js .chooko_upload_button,
+.no-js .chooko_remove_button {
 	display: none;
 }
 

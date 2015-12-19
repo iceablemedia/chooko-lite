@@ -19,25 +19,20 @@
 	<?php endif; ?>
 
 	<div id="sub-footer"><div class="container">
-		<?php			
-			$creation_year = icefit_get_option('copyright_start_year');
-			$current_year = date('Y');
-			if ($current_year == $creation_year) $copyright_years = $creation_year;
-			else $copyright_years = $creation_year.'-'.$current_year;
-			$footer_note = icefit_get_option('footer_note');
-			$footer_note = str_replace("%date%", $copyright_years, $footer_note);
-			$footer_note = str_replace("%sitename%", get_bloginfo('name'), $footer_note );
-			$footer_note = htmlspecialchars_decode( $footer_note );
-			$allowed_html = wp_kses_allowed_html( 'post' );
-		?>
-		<div class="sub-footer-left"><p><?php echo wp_kses( $footer_note, $allowed_html ); ?></p></div>
+		<div class="sub-footer-left"><p><?php 
+			/* You are free to modify or replace this by anything you like,
+			 * Though it would be really nice if you decide to keep the tiny link to the theme author :)
+			 */ ?>
+			 Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. 
+			 <?php printf( __( 'Proudly powered by', 'chooko' ) ); ?><a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'chooko' ); ?>"> WordPress</a>. Chooko design by <a href="<?php echo esc_url( 'http://www.iceablethemes.com' ); ?>" title="<?php esc_attr_e( 'Iceablethemes', 'chooko' ); ?>">Iceable Themes</a>.
+		</p></div>
+
 		<div class="sub-footer-right">
 			<?php	$footer_menu = array( 'theme_location' => 'footer-menu', 'depth' => 1);
 					wp_nav_menu( $footer_menu ); ?>
 		</div>
 	</div></div>
 	<!-- End Footer -->
-
 </div>
 <!-- End main wrap -->
 

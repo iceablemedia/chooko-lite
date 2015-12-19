@@ -8,332 +8,100 @@
  * Theme's Function
  *
  */
- 
-/*--------------- Framework Elements -------------*/
 
-// Admin Settings Panel
-include_once('functions/icefit-options/settings.php');
-// Page Settings Metabox
-include_once('functions/icefit-page-settings/icefit-page-settings.php');
-// Slides custom post type
-include_once('functions/icefit-slides/icefit-slides.php');
+/*
+ * Set default $content_width
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 680;
 
-
-/*------------- Redirect to Options Panel upon activation ------------*/
-
-function icefit_theme_activation() {
-	wp_redirect(admin_url("themes.php?page=icefit-settings"));
+/* Adjust $content_width it depending on the page being displayed */
+function chooko_content_width() {
+	global $content_width;
+	if ( is_page_template( 'page-full-width.php' ) )
+		$content_width = 920;
 }
+add_action( 'template_redirect', 'chooko_content_width' );
 
-add_action('after_switch_theme', 'icefit_theme_activation');
+/*
+ * Setup and registration functions
+ */
+function chooko_setup(){
+	/* Translation support
+	 * Translations can be added to the /languages directory.
+	 * A .pot template file is included to get you started
+	 */
+	load_theme_textdomain('chooko', get_template_directory() . '/languages');
 
-/*--------------------- Specific Theme Settings --------------------*/
+	/* Feed links support */
+	add_theme_support( 'automatic-feed-links' );
 
-if ( ! isset( $content_width ) ) $content_width = 680;
-set_post_thumbnail_size( 260, 260, true );
+	/* Register Primary menu */
+	register_nav_menu( 'primary', 'Navigation menu' );
+	register_nav_menu( 'footer-menu', 'Footer menu' );
 
-/*--- Define and load text domain (used for localization) ---*/
+	/* Post Thumbnails Support */
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 260, 260, true );
 
-load_theme_textdomain('icefit', get_template_directory() . '/languages');
+	/* Custom header support */
+	add_theme_support( 'custom-header',
+						array(	'header-text' => false,
+								'width' => 962,
+								'height' => 400,
+								'flex-height' => true,
+								)
+					);
 
-add_action('after_setup_theme', 'icefit_setup');
-function icefit_setup(){
-    load_theme_textdomain('icefit', get_template_directory() . '/languages');
+	/* Custom background support */
+	add_theme_support( 'custom-background',
+						array(	'default-color' => 'f5f2f0',
+								'default-image' => get_template_directory_uri() . '/img/ricepaper2.png',
+								)
+					);
+
 }
+add_action('after_setup_theme', 'chooko_setup');
 
-/*-------------------- Enqueue styles --------------------*/
+/*
+ * Page title
+ */
+function chooko_wp_title( $title, $sep ) {
+	global $paged, $page;
 
-function icefit_styles() {
-	wp_register_style( 'icefit', get_template_directory_uri() . '/css/icefit.css');
-	wp_enqueue_style( 'icefit' );
-	wp_register_style( 'theme-style', get_template_directory_uri() . '/css/theme-style.css');
-	wp_enqueue_style( 'theme-style' );
-	wp_register_style( 'media-queries', get_template_directory_uri() . '/css/media-queries.css');
-	wp_enqueue_style( 'media-queries' );
-	wp_register_style( 'prettyPhoto', get_template_directory_uri() . '/css/prettyPhoto.css');
-	wp_enqueue_style( 'prettyPhoto' );
-	wp_register_style( 'dynamic-styles', site_url() . '/index.php?dynamiccss=1');
-	wp_enqueue_style( 'dynamic-styles' );
-	wp_enqueue_style( 'http://fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700', array(), null );
+	if ( is_feed() )
+		return $title;
 
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'chooko' ), max( $paged, $page ) );
+
+	return $title;
 }
-add_action('wp_print_styles', 'icefit_styles');
+add_filter( 'wp_title', 'chooko_wp_title', 10, 2 );
 
-// Register editor CSS
-add_editor_style();
-
-/*-------------------- Enqueue javascripts --------------------*/
-
-function icefit_scripts() {
-	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/icefit.js', array('jquery'));
-	wp_enqueue_script('hoverIntent',    get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));	// Submenus
-	wp_enqueue_script('superfish',      get_template_directory_uri() . '/js/superfish.js', array('jquery'));	// Submenus
-    wp_enqueue_script('flexslider',     get_template_directory_uri() .'/js/jquery.flexslider-min.js', array('jquery')); // Flexslider
-    wp_enqueue_script('prettyPhoto',    get_template_directory_uri() .'/js/jquery.prettyPhoto.js', array('jquery')); // prettyPhoto
+/*
+ * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
+ */
+function chooko_page_menu_args( $args ) {
+	if ( ! isset( $args['show_home'] ) )
+		$args['show_home'] = true;
+	return $args;
 }
-add_action('wp_enqueue_scripts', 'icefit_scripts');
+add_filter( 'wp_page_menu_args', 'chooko_page_menu_args' );
 
-/*-------------------- Required WP Theme Support  --------------------*/
-add_theme_support( 'automatic-feed-links' );
-
-/*-------------------- Add Post Thumbnails Support -------------------*/
-add_theme_support( 'post-thumbnails' );
-
-/*-------------------- WP unwanted behaviors fix --------------------*/
-
-/* Remove rel tags in category links (HTML5 invalid) */
-add_filter( 'the_category', 'icefit_remove_rel_cat' ); 
-function icefit_remove_rel_cat( $text ) {
-	$text = str_replace(' rel="category"', "", $text);
-	$text = str_replace(' rel="category tag"', "", $text);
-	return $text;
-}
-
-/* Fix for a known issue with enclosing shortcodes and wpauto */
-/* Credits : Johann Heyne */
-add_filter('the_content', 'icefit_shortcode_empty_paragraph_fix');
-function icefit_shortcode_empty_paragraph_fix($content) {
-	$array = array (
-		'<p>['    => '[', 
-		']</p>'   => ']', 
-		']<br />' => ']',
-	);
-	$content = strtr($content, $array);
-	return $content;
-}
-
-/* Improved version of clean_pre */
-/* Based on a work by Emrah Gunduz */
-add_filter( 'the_content', 'icefit_protect_pre' );
-
-function icefit_protect_pre($pee) {
-	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'icefit_eg_clean_pre', $pee );
-	return $pee;
-}
-
-function icefit_eg_clean_pre($matches) {
-	if ( is_array($matches) )
-		$text = $matches[1] . $matches[2] . "</pre>";
-	else
-		$text = $matches;
-	$text = str_replace('<br />', '', $text);
-	return $text;
-}
-
-/*------------------- Finds whether post page needs comments pagination links ------------------*/
-
-function icefit_page_has_comments_nav() {
-	global $wp_query;
-	return ($wp_query->max_num_comment_pages > 1);
-}
-
-function icefit_page_has_next_comments_link() {
-	global $wp_query;
-	$max_cpage = $wp_query->max_num_comment_pages;
-	$cpage = get_query_var( 'cpage' );	
-	return ( $max_cpage > $cpage );
-}
-
-function icefit_page_has_previous_comments_link() {
-	$cpage = get_query_var( 'cpage' );	
-	return ($cpage > 1);
-}
-
-
-/*------------ Improved excerpt ------------*/
-
-function icefit_improved_trim_excerpt($text) {
-	global $post;
-	if ( '' == $text ) {
-		$text = get_the_content('');
-		$text = preg_replace( '|\[(.+?)\](.+?\[/\\1\])?|s', '', $text); // Remove shortcodes
-    	$text = apply_filters('the_content', $text);
-		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-		$text = preg_replace('@<style[^>]*?>.*?</style>@si', '', $text);
-		$text = preg_replace('@<p class="wp-caption-text"[^>]*?>.*?</p>@si', '', $text);
-    	$text = str_replace('\]\]\>', ']]&gt;', $text);
-    	$excerpt_length = 50;
-    	$words = explode(' ', $text, $excerpt_length + 1);
-    	if (count($words)> $excerpt_length) {
-			array_pop($words);
-			$text = implode(' ', $words)."...";
-		}
-    	$text = strip_tags($text, '<br><p><i><em><b><a><strong>');
-
-    	if ( extension_loaded('tidy') ) {
-	    	$tidy = new tidy();
-	    	$tidy->parseString($text,array('show-body-only'=>true,'wrap'=>'0'),'utf8');
-	    	$tidy->cleanRepair();
-	    	$text = $tidy;
-    	}
-    	
-		$text .= '<div class="read-more"><a href="'.get_permalink($post->ID).'">'.__('Read More', 'icefit').'</a></div>';
-	}
-	return $text;
-}
-
-if ( icefit_get_option('blog_index_content') == "Icefit Improved Excerpt" ) {
-	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-	add_filter('get_the_excerpt', 'icefit_improved_trim_excerpt');
-}
-
-/*--------------------- Rewrite Gallery Shortcode ---------------------*/
-
-function icefit_gallery_shortcode($attr) {
-	$post = get_post();
-
-	static $instance = 0;
-	$instance++;
-
-	if ( ! empty( $attr['ids'] ) ) {
-		// 'ids' is explicitly ordered, unless you specify otherwise.
-		if ( empty( $attr['orderby'] ) )
-			$attr['orderby'] = 'post__in';
-		$attr['include'] = $attr['ids'];
-	}
-
-	// Allow plugins/themes to override the default gallery template.
-	$output = apply_filters('post_gallery', '', $attr);
-	if ( $output != '' )
-		return $output;
-
-	// We're trusting author input, so let's at least make sure it looks like a valid orderby statement
-	if ( isset( $attr['orderby'] ) ) {
-		$attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
-		if ( !$attr['orderby'] )
-			unset( $attr['orderby'] );
-	}
-
-	extract(shortcode_atts(array(
-		'order'      => 'ASC',
-		'orderby'    => 'menu_order ID',
-		'id'         => $post->ID,
-		'itemtag'    => 'dl',
-		'icontag'    => 'dt',
-		'captiontag' => 'dd',
-		'columns'    => 3,
-		'size'       => 'thumbnail',
-		'include'    => '',
-		'exclude'    => ''
-	), $attr));
-
-	$id = intval($id);
-	if ( 'RAND' == $order )
-		$orderby = 'none';
-
-	if ( !empty($include) ) {
-		$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-
-		$attachments = array();
-		foreach ( $_attachments as $key => $val ) {
-			$attachments[$val->ID] = $_attachments[$key];
-		}
-	} elseif ( !empty($exclude) ) {
-		$attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-	} else {
-		$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-	}
-
-	if ( empty($attachments) )
-		return '';
-
-	if ( is_feed() ) {
-		$output = "\n";
-		foreach ( $attachments as $att_id => $attachment )
-			$output .= wp_get_attachment_link($att_id, $size, true) . "\n";
-		return $output;
-	}
-
-	$itemtag = tag_escape($itemtag);
-	$captiontag = tag_escape($captiontag);
-	$icontag = tag_escape($icontag);
-	$valid_tags = wp_kses_allowed_html( 'post' );
-	if ( ! isset( $valid_tags[ $itemtag ] ) )
-		$itemtag = 'dl';
-	if ( ! isset( $valid_tags[ $captiontag ] ) )
-		$captiontag = 'dd';
-	if ( ! isset( $valid_tags[ $icontag ] ) )
-		$icontag = 'dt';
-
-	$columns = intval($columns);
-	$itemwidth = $columns > 0 ? floor(90/$columns) : 100;
-	$float = is_rtl() ? 'right' : 'left';
-
-	$selector = "gallery-{$instance}";
-
-	$gallery_style = $gallery_div = '';
-	if ( apply_filters( 'use_default_gallery_style', true ) )
-		$gallery_style = "
-		<style type='text/css'>
-			#{$selector} {
-				margin: auto;
-			}
-			#{$selector} .gallery-item {
-				float: {$float};
-				margin-top: 10px;
-				text-align: center;
-				width: {$itemwidth}%;
-			}".
-/*			#{$selector} img {
-				border: 2px solid #cfcfcf;
-			}*/"
-			#{$selector} .gallery-caption {
-				margin-left: 0;
-			}
-		</style>
-		<!-- see gallery_shortcode() in wp-includes/media.php -->";
-	$size_class = sanitize_html_class( $size );
-	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
-	$output = apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );
-
-	$i = 0;
-	foreach ( $attachments as $id => $attachment ) {
-		// Force linking to image file 
-		$link = wp_get_attachment_link($id, $size, false, false);
-
-		$output .= "<{$itemtag} class='gallery-item'>";
-		$output .= "
-			<{$icontag} class='gallery-icon'>
-				$link
-			</{$icontag}>";
-		if ( $captiontag && trim($attachment->post_excerpt) ) {
-			$output .= "
-				<{$captiontag} class='wp-caption-text gallery-caption'>
-				" . wptexturize($attachment->post_excerpt) . "
-				</{$captiontag}>";
-		}
-		$output .= "</{$itemtag}>";
-		if ( $columns > 0 && ++$i % $columns == 0 )
-			$output .= '<br style="clear: both" />';
-	}
-
-	$output .= "
-			<br style='clear: both;' />
-		</div>\n";
-
-	return $output;
-}
-
-remove_shortcode('gallery', 'gallery_shortcode');
-add_shortcode('gallery', 'icefit_gallery_shortcode');
-
-
-/*-------------------- Add prettyPhoto tag to the gallery --------------------*/
-
-add_filter( 'wp_get_attachment_link', 'icefit_sant_prettyadd');
-function icefit_sant_prettyadd ($content) {
-	$content = preg_replace("/<a/","<a rel=\"prettyPhoto[gal]\"",$content,1);
-	return $content;
-}
-
-/* -------------- Register Menus --------------------- */
-register_nav_menu( 'primary', 'Navigation menu' );
-register_nav_menu( 'footer-menu', 'Footer menu' );
-
-/* --------------- Add parent Class to parent menu items ----------------- */
-
-add_filter( 'wp_nav_menu_objects', 'icefit_add_menu_parent_class' );
-function icefit_add_menu_parent_class( $items ) {
+/*
+ * Add parent Class to parent menu items
+ */
+function chooko_add_menu_parent_class( $items ) {
 	$parents = array();
 	foreach ( $items as $item ) {
 		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
@@ -347,11 +115,159 @@ function icefit_add_menu_parent_class( $items ) {
 	}
 	return $items;    
 }
+add_filter( 'wp_nav_menu_objects', 'chooko_add_menu_parent_class' );
 
 
-/* -------------- Create dropdown menu (used in responsive mode) ----------- */
+/*
+ * Register Sidebar and Footer widgetized areas
+ */
+function chooko_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Default Sidebar', 'chooko' ),
+		'id'            => 'sidebar',
+		'description'   => '',
+	    'class'         => '',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+		)
+	);
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer', 'chooko' ),
+		'id'            => 'footer-sidebar',
+		'description'   => '',
+	    'class'         => '',
+		'before_widget' => '<li id="%1$s" class="one-fourth widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+		)
+	);
+}
+add_action( 'widgets_init', 'chooko_widgets_init' );
 
-function icefit_dropdown_nav_menu () {
+
+/*
+ * Enqueue CSS styles
+ */
+function chooko_styles() {
+	wp_register_style( 'icefit',		get_template_directory_uri() . '/css/icefit.css');
+	wp_register_style( 'theme-style',	get_template_directory_uri() . '/css/theme-style.css');
+
+	wp_enqueue_style( 'icefit' );
+	wp_enqueue_style( 'theme-style' );
+
+	// Google Webfonts
+	$protocol = is_ssl() ? 'https' : 'http';
+	wp_enqueue_style( 'PTSans-webfonts', "$protocol://fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700", array(), null );
+}
+add_action('wp_print_styles', 'chooko_styles');
+
+
+/*
+ * Enqueue Javascripts
+ */
+function chooko_scripts() {
+	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/icefit.js', array('jquery'));
+	wp_enqueue_script('hoverIntent',    get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));	// Submenus
+	wp_enqueue_script('superfish',      get_template_directory_uri() . '/js/superfish.js', array('jquery'));	// Submenus
+    /* Threaded comments support */
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+}
+add_action('wp_enqueue_scripts', 'chooko_scripts');
+
+
+/*
+ * Remove "rel" tags in category links (HTML5 invalid)
+ */
+function chooko_remove_rel_cat( $text ) {
+	$text = str_replace(' rel="category"', "", $text); return $text;
+}
+add_filter( 'the_category', 'chooko_remove_rel_cat' ); 
+
+/*
+ * Fix for a known issue with enclosing shortcodes and wpautop
+ * (wpautop tends to add empty <p> or <br> tags before and/or after enclosing shortcodes)
+ * Thanks to Johann Heyne
+ */
+function chooko_shortcode_empty_paragraph_fix($content) {
+	$array = array (
+		'<p>['    => '[', 
+		']</p>'   => ']', 
+		']<br />' => ']',
+	);
+	$content = strtr($content, $array);
+	return $content;
+}
+add_filter('the_content', 'chooko_shortcode_empty_paragraph_fix');
+
+/*
+ * Improved version of clean_pre
+ * Based on a work by Emrah Gunduz
+ */
+function chooko_protect_pre($pee) {
+	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'chooko_eg_clean_pre', $pee );
+	return $pee;
+}
+
+function chooko_eg_clean_pre($matches) {
+	if ( is_array($matches) )
+		$text = $matches[1] . $matches[2] . "</pre>";
+	else
+		$text = $matches;
+	$text = str_replace('<br />', '', $text);
+	return $text;
+}
+add_filter( 'the_content', 'chooko_protect_pre' );
+
+/*
+ * Customize "read more" links on index view
+ */
+function chooko_excerpt_more( $more ) {
+	global $post;
+	return '<div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'chooko') .'</a></div>';
+}
+add_filter( 'excerpt_more', 'chooko_excerpt_more' );
+
+/*
+ * Rewrite and replace wp_trim_excerpt() so it adds a relevant read more link
+ * when the <!--more--> or <!--nextpage--> quicktags are used
+ * This new function preserves every features and filters from the original wp_trim_excerpt
+ */
+function chooko_trim_excerpt($text = '') {
+	global $post;
+	$raw_excerpt = $text;
+	if ( '' == $text ) {
+		$text = get_the_content('');
+		$text = strip_shortcodes( $text );
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]>', ']]&gt;', $text);
+		$excerpt_length = apply_filters('excerpt_length', 55);
+		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+
+		/* If the post_content contains a <!--more--> OR a <!--nextpage--> quicktag
+		 * AND the more link has not been added already
+		 * then we add it now
+		 */
+		if ( ( preg_match('/<!--more(.*?)?-->/', $post->post_content ) || preg_match('/<!--nextpage-->/', $post->post_content ) ) && strpos($text,$excerpt_more) === false ) {
+		 $text .= $excerpt_more;
+		}
+		
+	}
+	return apply_filters('chooko_trim_excerpt', $text, $raw_excerpt);
+}
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
+add_filter( 'get_the_excerpt', 'chooko_trim_excerpt' );
+
+/*
+ * Create dropdown menu (used in responsive mode)
+ * Requires a custom menu to be set (won't work with fallback menu)
+ */
+function chooko_dropdown_nav_menu () {
 	$menu_name = 'primary';
 	if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		if ($menu = wp_get_nav_menu_object( $locations[ $menu_name ] ) ) {
@@ -370,73 +286,49 @@ function icefit_dropdown_nav_menu () {
     } 
 }
 
-/*-------------------------------------------
-------- Sidebar and Widgetized areas --------
--------------------------------------------*/
-
-register_sidebar( array(
-	'name'          => __( 'Default Sidebar', 'icefit' ),
-	'id'            => 'sidebar',
-	'description'   => '',
-    'class'         => '',
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h3 class="widget-title">',
-	'after_title'   => '</h3>',
-	)
-);
-
-register_sidebar( array(
-	'name'          => __( 'Footer', 'icefit' ),
-	'id'            => 'footer-sidebar',
-	'description'   => '',
-    'class'         => '',
-	'before_widget' => '<li id="%1$s" class="one-fourth widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h3 class="widget-title">',
-	'after_title'   => '</h3>',
-	)
-);
-
-/*--------------- Dynamic Footer Code -------------*/
-
-function icefit_dynamic_footer() {
-	echo icefit_get_option('tracking_code');
+/*
+ * Find whether post page needs comments pagination links (used in comments.php)
+ */
+function chooko_page_has_comments_nav() {
+	global $wp_query;
+	return ($wp_query->max_num_comment_pages > 1);
 }
-add_action('wp_footer', 'icefit_dynamic_footer');
-	
-/*--------------- Dynamic CSS -------------*/
 
-// Add 'dynamiccss' to the list of valid query vars
-function icefit_dynamiccss_query_vars($vars) {
-	$new_vars = array('dynamiccss');
-	$vars = $new_vars + $vars;
-    return $vars;
+function chooko_page_has_next_comments_link() {
+	global $wp_query;
+	$max_cpage = $wp_query->max_num_comment_pages;
+	$cpage = get_query_var( 'cpage' );	
+	return ( $max_cpage > $cpage );
 }
-add_filter('query_vars', 'icefit_dynamiccss_query_vars');
 
-// Check request args and proceed to output dynamic CSS
-function icefit_dynamiccss_parse_request($wp) {
-    // only process requests with "dynamiccss=1"
-    if (array_key_exists('dynamiccss', $wp->query_vars) 
-            && $wp->query_vars['dynamiccss'] == '1') {
-        icefit_dynamiccss_output($wp);
-    }
+function chooko_page_has_previous_comments_link() {
+	$cpage = get_query_var( 'cpage' );	
+	return ($cpage > 1);
 }
-add_action('parse_request', 'icefit_dynamiccss_parse_request');
 
-// Generate dynamic CSS
-function icefit_dynamiccss_output() {
-	$background_color = icefit_get_option('background_color');
-	$background_image = icefit_get_option('background_image');
-	$custom_css = "body {
-			background-image: url('".$background_image."');
-			background-color: ".$background_color.";
-		}";
+/*
+ * Find whether attachement page needs navigation links (used in single.php)
+ */
+function chooko_adjacent_image_link($prev = true) {
+    global $post;
+    $post = get_post($post);
+    $attachments = array_values(get_children("post_parent=$post->post_parent&post_type=attachment&post_mime_type=image&orderby=\"menu_order ASC, ID ASC\""));
 
-	header('Content-type: text/css');
-	echo $custom_css;
-	die();
+    foreach ( $attachments as $k => $attachment )
+        if ( $attachment->ID == $post->ID )
+            break;
+
+    $k = $prev ? $k - 1 : $k + 1;
+
+    if ( isset($attachments[$k]) )
+        return true;
+	else
+		return false;
 }
+
+/*
+ * Framework Elements
+ */
+include_once('functions/icefit-options/settings.php'); // Admin Settings Panel
 
 ?>

@@ -14,7 +14,7 @@
 		die ('Please do not load this page directly. Thanks!');
 
 	if ( post_password_required() ) { ?>
-		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'icefit'); ?></p>
+		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'chooko'); ?></p>
 	<?php
 		return;
 	}
@@ -28,13 +28,13 @@
 	<?php wp_list_comments( array('avatar_size' => 64 ) );?>
 	</ol>
 
-	<?php if (icefit_page_has_comments_nav() ): ?>
+	<?php if (chooko_page_has_comments_nav() ): ?>
 	<div class="comments_nav">
-		<?php if ( icefit_page_has_previous_comments_link() ) : ?>
-		<div class="previous"><?php previous_comments_link( __('Older comments', 'icefit') ) ?></div>
+		<?php if ( chooko_page_has_previous_comments_link() ) : ?>
+		<div class="previous"><?php previous_comments_link( __('Older comments', 'chooko') ) ?></div>
 		<?php endif; ?>
-		<?php if ( icefit_page_has_next_comments_link() ) : ?>
-		<div class="next"><?php next_comments_link( __('Newer comments', 'icefit') ) ?></div>
+		<?php if ( chooko_page_has_next_comments_link() ) : ?>
+		<div class="next"><?php next_comments_link( __('Newer comments', 'chooko') ) ?></div>
 		<?php endif; ?>
 	</div>
 	<?php endif; ?>
@@ -46,7 +46,7 @@
 
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
-		<p class="nocomments"><?php _e('Comments are closed.', 'icefit'); ?></p>
+		<p class="nocomments"><?php _e('Comments are closed.', 'chooko'); ?></p>
 
 	<?php endif; ?>
 <?php endif; ?>

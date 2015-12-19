@@ -5,7 +5,7 @@
  *
  * Copyright 2013 Mathieu Sarrasin - Iceable Media
  *
- * Page Template
+ * Template Name: Full-width Page Template, No Sidebar
  *
  */
 ?>
@@ -22,7 +22,7 @@ global $header_image;
 
 		<h1 class="page-title"><?php the_title(); ?></h1>
 
-		<div id="page-container" <?php post_class("left with-sidebar"); ?>>
+		<div id="page-container" <?php post_class(); ?>>
 
 				<?php the_content(); ?>
 				<br class="clear" />
@@ -46,12 +46,6 @@ global $header_image;
 		</div>
 		<!-- End page container -->
 
-		<div id="sidebar-container" class="right">
-			<ul id="sidebar">
-			   <?php get_sidebar(); ?>
-			</ul>
-		</div>		
-		<!-- End sidebar -->
 	</div>
 	<!-- End main content -->
 <?php get_footer(); ?>
