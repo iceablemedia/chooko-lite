@@ -1,0 +1,178 @@
+/**
+ *
+ * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ *
+ * Copyright 2013 Mathieu Sarrasin - Iceable Media
+ *
+ * Media Queries CSS
+ *
+ */
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#logo {
+		padding: 40px 15px;
+	}
+	#navbar, #slider-wrap {
+		width: 768px;
+	}
+	h1.page-title {
+		width: 738px;
+		margin: 0 15px 40px 15px;
+	}
+	h1.entry-title {
+		width: 546px;
+	}
+	#navbar > .menu-container {
+		width: 768px;
+	}
+	#nav-search {
+		width: 150px;
+	}
+	#nav-search #s {
+		width: 112px;
+	}
+	#searchform #searchsubmit {
+		left: 122px;
+	}
+	#searchform #s {
+		width: 131px;
+	}
+	#sidebar #searchform #s {
+		width: 117px;
+	}
+	#calendar_wrap td {
+		padding: 1px 3px;
+	}
+	.thumbnail {
+		max-width: 200px;
+		height: auto;
+	}
+	.single-post .thumbnail {
+		max-width: 546px;
+		height: auto;
+	}
+	.post-contents,
+	.single-post .post-contents {
+		width: 546px;
+	}
+	#sidebar-container.right {
+		width: 161px;
+		margin-right: 15px!important;
+	}
+	#sidebar-container.left {
+		width: 161px;
+		margin-left: 15px!important;
+	}	
+	#footer .container {
+		width: 768px;
+	}
+}
+
+
+/* #Mobile (Portrait)
+================================================== */
+
+@media only screen and (max-width: 767px) {
+	#main-wrap.boxed {
+		width: 310px;
+		margin: 20px auto;
+	}
+	#logo {
+		text-align: center 
+	}
+	#navbar > .menu-container {
+		width: 300px;
+	}
+	#nav-search {
+		display: none;
+	}
+	#sidebar #searchform #s {
+		width: 245px;
+	}
+	#sidebar #searchform #searchsubmit {
+		left: 255px;
+	}
+	#calendar_wrap td {
+		padding: 3px 12px;
+	}
+	#sidebar .partner-thumb {
+		width: 275px;
+	}
+	h1.page-title {
+    	margin: 0 10px 40px 10px;
+    	width: 280px;
+    }
+    h1.entry-title {
+    	margin: 0 10px 40px 10px;
+    	width: 260px;	    
+    }
+	.post-contents,
+	.single-post .post-contents {
+		width: 280px;
+	}
+	.thumbnail {
+		float: none;
+		margin-left: 0;
+	}
+	.single-post .thumbnail {
+    	max-width: 280px;
+    }
+	#sub-footer div {
+		width: 280px;
+		margin: auto;
+		float: none;
+		max-width: 100%;
+		text-align: center;
+	}
+	#sub-footer .sub-footer-left {
+	     margin-bottom: 10px;
+	}
+	.sub-footer-left p {
+	     padding: 0; 
+	}
+}
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#main-wrap.boxed {
+		width: 440px;
+		margin: 20px auto;
+	}
+	#navbar > .menu-container {
+		width: 420px;
+	}
+	#sidebar #searchform #s {
+		width: 360px;
+	}
+	#sidebar #searchform #searchsubmit {
+		left: 370px;
+	}
+	#calendar_wrap td {
+		padding: 5px 20px;
+	}
+	h1.page-title, h1.entry-title {
+		margin: 0 10px 40px 10px;
+		width: 400px;
+	}
+	.post-contents,
+	.single-post .post-contents {
+		width: 400px;
+	}
+	.thumbnail {
+    	max-width: 200px;
+    }
+	.single-post .thumbnail {
+    	max-width: 400px;
+    }
+	#sub-footer div {
+		width: 400px;
+		margin: auto;
+	}
+}
