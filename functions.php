@@ -153,11 +153,30 @@ add_action( 'widgets_init', 'chooko_widgets_init' );
  * Enqueue CSS styles
  */
 function chooko_styles() {
-	wp_register_style( 'icefit',		get_template_directory_uri() . '/css/icefit.css');
-	wp_register_style( 'theme-style',	get_template_directory_uri() . '/css/theme-style.css');
+
+	$template_directory_uri = get_template_directory_uri(); // Parent theme URI
+	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
+	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
+
+	/* Child theme support:
+	 * Enqueue child-theme's versions of stylesheet in /css if they exist,
+	 * or the parent theme's version otherwise
+	 */
+	if ( @file_exists( $stylesheet_directory . '/css/icefit.css' ) )
+		wp_register_style( 'icefit', $stylesheet_directory_uri . '/css/icefit.css' );
+	else
+		wp_register_style( 'icefit', $template_directory_uri . '/css/icefit.css' );		
+	if ( @file_exists( $stylesheet_directory . '/css/theme-style.css' ) )
+		wp_register_style( 'theme-style', $stylesheet_directory_uri . '/css/theme-style.css' );
+	else
+		wp_register_style( 'theme-style', $template_directory_uri . '/css/theme-style.css' );		
+
+	// Always enqueue style.css from the current theme
+	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
 
 	wp_enqueue_style( 'icefit' );
 	wp_enqueue_style( 'theme-style' );
+	wp_enqueue_style( 'style' );
 
 	// Google Webfonts
 	$protocol = is_ssl() ? 'https' : 'http';
