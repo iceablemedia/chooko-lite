@@ -432,11 +432,13 @@ h1.page-title {
 }
 
 #footer .container > ul > li {
+	display: inline-block;
 	margin-left: 20px !important;
 	margin-right: 20px !important;
 	margin-bottom: 40px;
 	vertical-align: top;
 	float: none;
+	width: 200px;
 }
 
 .wp-audio-shortcode { margin-bottom: 20px; }
@@ -455,8 +457,6 @@ h1.page-title {
 #page-container .page-title {
 	margin-top: 0px;
 }
-
-#footer div > ul > li { width: 200px; display: inline-block; }
 
 /* With Sidebar: Container= 720 */
 #page-container.with-sidebar { width: 680px; padding: 0 20px; }
@@ -501,7 +501,7 @@ h1.page-title {
 	#page-container { width: 766px; }
 
 	/* No sidebar: Container= 766 */
-	#footer div ul > .one-fourth     { width: 161px; }
+	#footer .container > ul > li { width: 161px; }
 	
 	/* With Sidebar: Container= 576 */
 	#page-container.with-sidebar { width: 576px; }
@@ -545,7 +545,7 @@ h1.page-title {
 	#page-container { width: 298px; }
 
 	/* No sidebar: Container= 300 */
-	#footer div ul > .one-fourth { width: 280px; }
+	#footer .container > ul > li { width: 280px; }
 
 	/* With Sidebar: Container= 300 */
 	#page-container.with-sidebar { width: 298px; }
@@ -595,7 +595,7 @@ h1.page-title {
 	#page-container { width: 420px; }
 
 	/* No sidebar: Container= 420 */
-	#footer div ul > .one-fourth { width: 400px; }
+	#footer .container > ul > li { width: 400px; }
 
 	/* With Sidebar: Container= 420 */
 	#page-container.with-sidebar { width: 420px; }
