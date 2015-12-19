@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 1.1.9
+Tested up to: 4.2.2
+Stable tag: 1.1.10
 
 == ABOUT CHOOKO LITE ==
 
@@ -35,12 +35,39 @@ Please refer to license.txt for more information.
 == CREDITS ==
 
 This theme bundles some third party javascript and jQuery plugins, released under GPL or GPL compatible licenses:
-* hoverIntent: Copyright 2007, 2013 Brian Cherne. MIT License. http://cherne.net/brian/resources/jquery.hoverIntent.html
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
+* HTML5 Shiv v3.6 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed. Source: https://github.com/aFarkas/html5shiv
 
-All other files are copyright 2013-2014 Iceable Media.
+All other files are copyright 2013-2015 Iceable Media and released under the terms of the GNU GPLv2 License.
 
 == CHANGELOG ==
+
+= 1.1.10 =
+May 26th, 2015
+
+* Tested with WP 4.2.2
+* Enhanced menu items: the whole item area is now clickable, not just the text
+* Added option to display tagline
+* Added option to chose between "excerpt" or "full content" for the blog index page  
+* Added option to switch off responsiveness
+* Made all strings translatable, including the backend
+* Updated POT file
+* Added french (fr_FR) translation
+* Added admin notice when menu is not set (on theme option page only)
+* Various PHP/HTML optimizations
+* Removed obsolete code from comments.php
+* Added extra user permission check in icefit-options
+* Enhanced validation and sanitation in icefit-options
+* Renamed and moved /page-full-width.php to /page-templates/full-width.php
+* Prefixed hook (chooko-style) to enqueue style.css
+* Now using core version of hoverintent
+* Merged all front-end css in silverclean.dev.css and minified in silverclean.min.css
+* Merged all front-end javascripts in silverclean.dev.js and minified in silverclean.min.js
+* Removed content filters
+* Appropriately use the_title_attribute() to escape title attributes in index.php
+* Update copyright dates
+* Updated description
+* Updated credits
 
 = 1.1.9 =
 September 24th, 2014

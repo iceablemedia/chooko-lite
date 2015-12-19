@@ -3,7 +3,7 @@
  *
  * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2014 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
@@ -157,25 +157,29 @@ function chooko_styles() {
 	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
 	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
 
+	$responsive_mode = chooko_get_option('responsive_mode');
+
+	if ($responsive_mode != 'off'):
+		$stylesheet = '/css/chooko.min.css';
+	else:
+		$stylesheet = '/css/chooko-unresponsive.min.css';
+	endif;
+
+
 	/* Child theme support:
 	 * Enqueue child-theme's versions of stylesheet in /css if they exist,
 	 * or the parent theme's version otherwise
 	 */
-	if ( @file_exists( $stylesheet_directory . '/css/icefit.css' ) )
-		wp_register_style( 'icefit', $stylesheet_directory_uri . '/css/icefit.css' );
+	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
+		wp_register_style( 'chooko', $stylesheet_directory_uri . $stylesheet );
 	else
-		wp_register_style( 'icefit', $template_directory_uri . '/css/icefit.css' );		
-	if ( @file_exists( $stylesheet_directory . '/css/theme-style.css' ) )
-		wp_register_style( 'theme-style', $stylesheet_directory_uri . '/css/theme-style.css' );
-	else
-		wp_register_style( 'theme-style', $template_directory_uri . '/css/theme-style.css' );		
+		wp_register_style( 'chooko', $template_directory_uri . $stylesheet );
 
 	// Always enqueue style.css from the current theme
-	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
+	wp_register_style( 'chooko-style', $stylesheet_directory_uri . '/style.css');
 
-	wp_enqueue_style( 'icefit' );
-	wp_enqueue_style( 'theme-style' );
-	wp_enqueue_style( 'style' );
+	wp_enqueue_style( 'chooko' );
+	wp_enqueue_style( 'chooko-style' );
 
 	// Google Webfonts
 	wp_enqueue_style( 'PTSans-webfonts', "//fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700&subset=latin,latin-ext", array(), null );
@@ -187,9 +191,8 @@ add_action('wp_enqueue_scripts', 'chooko_styles');
  * Enqueue Javascripts
  */
 function chooko_scripts() {
-	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/icefit.js', array('jquery'));
-	wp_enqueue_script('hoverIntent',    get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));	// Submenus
-	wp_enqueue_script('superfish',      get_template_directory_uri() . '/js/superfish.js', array('jquery'));	// Submenus
+	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/chooko.min.js', array('jquery','hoverIntent'));
+
     /* Threaded comments support */
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
@@ -211,44 +214,11 @@ add_filter('post_class','chooko_remove_hentry');
  * Remove "rel" tags in category links (HTML5 invalid)
  */
 function chooko_remove_rel_cat( $text ) {
-	$text = str_replace(' rel="category"', "", $text); return $text;
-}
-add_filter( 'the_category', 'chooko_remove_rel_cat' ); 
-
-/*
- * Fix for a known issue with enclosing shortcodes and wpautop
- * (wpautop tends to add empty <p> or <br> tags before and/or after enclosing shortcodes)
- * Thanks to Johann Heyne
- */
-function chooko_shortcode_empty_paragraph_fix($content) {
-	$array = array (
-		'<p>['    => '[', 
-		']</p>'   => ']', 
-		']<br />' => ']',
-	);
-	$content = strtr($content, $array);
-	return $content;
-}
-add_filter('the_content', 'chooko_shortcode_empty_paragraph_fix');
-
-/*
- * Improved version of clean_pre
- * Based on a work by Emrah Gunduz
- */
-function chooko_protect_pre($pee) {
-	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'chooko_eg_clean_pre', $pee );
-	return $pee;
-}
-
-function chooko_eg_clean_pre($matches) {
-	if ( is_array($matches) )
-		$text = $matches[1] . $matches[2] . "</pre>";
-	else
-		$text = $matches;
-	$text = str_replace('<br />', '', $text);
+	$text = str_replace(' rel="category"', "", $text);
+	$text = str_replace(' rel="category tag"', "", $text);
 	return $text;
 }
-add_filter( 'the_content', 'chooko_protect_pre' );
+add_filter( 'the_category', 'chooko_remove_rel_cat' ); 
 
 /*
  * Customize "read more" links on index view
@@ -304,7 +274,11 @@ function chooko_dropdown_nav_menu () {
 		foreach ( (array) $menu_items as $key => $menu_item ) {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
-			if($url != "#" ) $menu_list .= '<option value="' . $url . '">' . $title . '</option>';
+			if ( $menu_item->menu_item_parent && $menu_item->menu_item_parent > 0 ):
+				$menu_list .= '<option value="' . $url . '"> &raquo; ' . $title . '</option>';
+			else:
+				$menu_list .= '<option value="' . $url . '">' . $title . '</option>';
+			endif;
 		}
 		$menu_list .= '</select>';
    		// $menu_list now ready to output

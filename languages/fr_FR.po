@@ -1,257 +1,260 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Chooko Lite 1.1.10\n"
-"POT-Creation-Date: 2015-05-26 11:11+0100\n"
-"PO-Revision-Date: 2015-05-26 11:12+0100\n"
+"POT-Creation-Date: 2015-05-26 11:18+0100\n"
+"PO-Revision-Date: 2015-05-26 11:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes\n"
-"Language: en_US\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: __;_e;_n;_x\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:16
 msgid "404"
-msgstr ""
+msgstr "404"
 
 #: ../404.php:20
 msgid "Page Not Found"
-msgstr ""
+msgstr "Page Introuvable"
 
 #: ../404.php:21 ../index.php:117 ../page.php:54 ../single.php:132
 #: ../page-templates/full-width.php:56
 msgid "What you are looking for isn't here..."
-msgstr ""
+msgstr "Ce que vous cherchez n'est pas ici..."
 
 #: ../404.php:22
 msgid "Maybe a search will help ?"
-msgstr ""
+msgstr "Peut-être qu'une recherche pourrait vous aider ?"
 
 #: ../comments.php:14
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
+"Cet article est protégé par un mot de passe. Veuillez entrer le mot de passe "
+"pour voir les commentaires."
 
 #: ../comments.php:20
 #, php-format
 msgid "One Response to %2$s"
-msgstr ""
+msgstr "Une réponse à %2$s"
 
 #: ../comments.php:30
 msgid "Older comments"
-msgstr ""
+msgstr "Commentaires précédents"
 
 #: ../comments.php:33
 msgid "Newer comments"
-msgstr ""
+msgstr "Commentaires suivants"
 
 #: ../comments.php:42
 msgid "Comments are closed."
-msgstr ""
+msgstr "Les commentaires sont fermés."
 
 #: ../footer.php:24
 #, php-format
 msgid "Copyright &copy; %s %s."
-msgstr ""
+msgstr "Copyright &copy; %s %s."
 
 #: ../footer.php:26
 #, php-format
 msgid "Proudly powered by <a href=\"%s\" title=\"%s\">%s</a>."
-msgstr ""
+msgstr "Fièrement propulsé par <a href=\"%s\" title=\"%s\">%s</a>."
 
 #: ../footer.php:27
 msgid "http://wordpress.org/"
-msgstr ""
+msgstr "http://fr.wordpress.org/"
 
 #: ../footer.php:29
 msgid "WordPress"
-msgstr ""
+msgstr "WordPress"
 
 #: ../footer.php:32
 #, php-format
 msgid "Chooko design by <a href=\"%s\" title=\"%s\">Iceable Themes</a>."
-msgstr ""
+msgstr "Chooko design par <a href=\"%s\" title=\"%s\">Iceable Themes</a>."
 
 #: ../functions.php:84
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Page %s"
 
 #: ../functions.php:125
 msgid "Default Sidebar"
-msgstr ""
+msgstr "Sidebar par défaut"
 
 #: ../functions.php:137
 msgid "Footer"
-msgstr ""
+msgstr "Pied de page"
 
 #: ../functions.php:228
 msgid "Read More"
-msgstr ""
+msgstr "Lire la suite"
 
 #: ../index.php:19
 msgid "Search Results for "
-msgstr ""
+msgstr "Résultat de la Recherche pour "
 
 #: ../index.php:24
 msgid "Tag: "
-msgstr ""
+msgstr "Tag : "
 
 #: ../index.php:29
 msgid "Category: "
-msgstr ""
+msgstr "Catégorie : "
 
 #: ../index.php:34
 msgid "Daily archives: "
-msgstr ""
+msgstr "Archives journalières : "
 
 #: ../index.php:37
 msgid "Monthly archives: "
-msgstr ""
+msgstr "Archives mensuelles : "
 
 #: ../index.php:40
 msgid "Yearly archives: "
-msgstr ""
+msgstr "Archives annuelles : "
 
 #: ../index.php:68 ../single.php:34
 msgid "by "
-msgstr ""
+msgstr "par "
 
 #: ../index.php:72 ../single.php:37
 msgid "in"
-msgstr ""
+msgstr "dans"
 
 #: ../index.php:75
 msgid "No Comment"
-msgstr ""
+msgstr "Pas de Commentaire"
 
 #: ../index.php:75
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Commentaire"
 
 #: ../index.php:75
 msgid "% Comments"
-msgstr ""
+msgstr "% Commentaires"
 
 #: ../index.php:75 ../single.php:43
 msgid "Comments Off"
-msgstr ""
+msgstr "Commentaires Off"
 
 #: ../index.php:80 ../page.php:38 ../single.php:47
 #: ../page-templates/full-width.php:39
 msgid "Edit"
-msgstr ""
+msgstr "Éditer"
 
 #: ../index.php:109 ../index.php:116 ../page.php:53 ../single.php:131
 #: ../page-templates/full-width.php:55
 msgid "Not Found"
-msgstr ""
+msgstr "Introuvable"
 
 #: ../index.php:110
 #, php-format
 msgid "Your search for \"%s\" did not return any result."
-msgstr ""
+msgstr "Votre recherche de \"%s\" n'a retourné aucun résultat."
 
 #: ../index.php:111
 msgid "Would you like to try another search ?"
-msgstr ""
+msgstr "Voulez-vous essayer une nouvelle recherche ?"
 
 #: ../index.php:125
 msgid "Previous Posts"
-msgstr ""
+msgstr "Articles précédents"
 
 #: ../index.php:129
 msgid "Next Posts"
-msgstr ""
+msgstr "Articles suivants"
 
 #: ../page.php:26 ../page-templates/full-width.php:26
 msgid "Pages:"
-msgstr ""
+msgstr "Pages :"
 
 #: ../page.php:31 ../single.php:69 ../page-templates/full-width.php:31
 msgid "Next page"
-msgstr ""
+msgstr "Page suivante"
 
 #: ../page.php:32 ../single.php:70 ../page-templates/full-width.php:32
 msgid "Previous page"
-msgstr ""
+msgstr "Page précédente"
 
 #: ../sidebar.php:16
 msgid "Recent Posts"
-msgstr ""
+msgstr "Articles récents"
 
 #: ../sidebar.php:21
 msgid "Archives"
-msgstr ""
+msgstr "Archives"
 
 #: ../sidebar.php:26
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #: ../single.php:42
 msgid "No"
-msgstr ""
+msgstr "Pas de "
 
 #: ../single.php:42
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../single.php:42
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../single.php:43
 msgid "Comment"
-msgstr ""
+msgstr "Commentaire"
 
 #: ../single.php:43
 msgid "Comments"
-msgstr ""
+msgstr "Commentaires"
 
 #: ../single.php:64
 msgid "Pages"
-msgstr ""
+msgstr "Pages"
 
 #: ../single.php:87
 msgid "Previous Image"
-msgstr ""
+msgstr "Image précédente"
 
 #: ../single.php:91
 msgid "Next Image"
-msgstr ""
+msgstr "Image suivante"
 
 #: ../single.php:97 ../single.php:117
 msgid "Previous Post"
-msgstr ""
+msgstr "Article précédent"
 
 #: ../single.php:100 ../single.php:120
 msgid "Next Post"
-msgstr ""
+msgstr "Article suivant"
 
 #: ../functions/icefit-options/icefit-options.php:26
 msgid "Theme Options"
-msgstr ""
+msgstr "Options du thème"
 
 #: ../functions/icefit-options/icefit-options.php:40
 msgid "Settings saved."
-msgstr ""
+msgstr "Paramètres mis à jour."
 
 #: ../functions/icefit-options/icefit-options.php:41
 msgid ""
 "Are you sure you want to reset ALL settings for this theme to default values?"
 msgstr ""
+"Êtes-vous sûr de vouloir remettre à zéro TOUS les paramètres du thème ?"
 
 #: ../functions/icefit-options/icefit-options.php:96
 msgid "Upload Image"
-msgstr ""
+msgstr "Transférer une image"
 
 #: ../functions/icefit-options/icefit-options.php:97
 msgid "Remove"
-msgstr ""
+msgstr "Enlever"
 
 #: ../functions/icefit-options/icefit-options.php:103
 #, php-format
@@ -294,49 +297,49 @@ msgstr ""
 
 #: ../functions/icefit-options/icefit-options.php:132
 msgid "Get Support"
-msgstr ""
+msgstr "Trouvez de l'aide"
 
 #: ../functions/icefit-options/icefit-options.php:133
 msgid "Have a question? Need help?"
-msgstr ""
+msgstr "Une question ? Besoin d'aide ?"
 
 #: ../functions/icefit-options/icefit-options.php:134
 msgid "Visit the free Chooko Lite support forums"
-msgstr ""
+msgstr "Visitez le forum d'aide gratuit de Chooko Lite (en anglais uniquement)"
 
 #: ../functions/icefit-options/icefit-options.php:136
 msgid "Give Feedback"
-msgstr ""
+msgstr "Donnez votre avis"
 
 #: ../functions/icefit-options/icefit-options.php:137
 msgid "Like this theme? We'd love to hear your feedback!"
-msgstr ""
+msgstr "Vous aimez ce thème ? Nous serions ravi d'entendre vos avis !"
 
 #: ../functions/icefit-options/icefit-options.php:138
 msgid "Rate and review Chooko Lite at WordPress.org"
-msgstr ""
+msgstr "Noter et commenter Chooko Lite sur WordPress.org"
 
 #: ../functions/icefit-options/icefit-options.php:141
 msgid "Get social!"
-msgstr ""
+msgstr "Réseaux sociaux"
 
 #: ../functions/icefit-options/icefit-options.php:142
 msgid "Follow and like IceableThemes!"
-msgstr ""
+msgstr "Suivez et \"likez\" IceableThemes !"
 
 #: ../functions/icefit-options/icefit-options.php:157
 #: ../functions/icefit-options/icefit-options.php:177
 #: ../functions/icefit-options/icefit-options.php:221
 msgid "You do not have permission to edit theme options."
-msgstr ""
+msgstr "Vous n'êtes pas autorisez à modifier les options du thème."
 
 #: ../functions/icefit-options/icefit-options.php:262
 msgid "Settings were reset to default."
-msgstr ""
+msgstr "Et paramètres ont été remis à zéro."
 
 #: ../functions/icefit-options/icefit-options.php:267
 msgid "Settings updated."
-msgstr ""
+msgstr "Paramètres mis à jour."
 
 #: ../functions/icefit-options/icefit-options.php:272
 msgid ""
@@ -348,6 +351,13 @@ msgid ""
 "third party plugin.<br />\n"
 "\tMake sure everything is up to date or try to deactivate some plugins."
 msgstr ""
+"<b>Attention:</b> Javascript est soit désactivé dans votre navigateur, soit "
+"cassé dans votre installation n de WordPress.<br />\n"
+"C'est n'est pas la fin du monde, mais il est vivement recommandé d'activer "
+"javascript pour une meilleur experience.<br />\n"
+"Si javascript n'est pas désactivé dans votre navigateur, il s'agit peut-être "
+"d'un problème avec un plugin tiers.<br />\n"
+"Assurez vous que tout est à jour ou essayez de désactiver des plugins."
 
 #: ../functions/icefit-options/icefit-options.php:280
 #, php-format
@@ -356,77 +366,85 @@ msgid ""
 "and your site is currently using a fallback menu which is not responsive. "
 "Please take a minute to <a href=\"%s\">set your menu now</a>!"
 msgstr ""
+"<strong>Note de Chooko Lite:</strong> vous n'avez pas défini votre menu "
+"principal, et votre site utilise un menu automatique par défaut qui n'est "
+"pas \"responsive\". Prenez une minute pour <a href=\"%s\">paramétrer</a> "
+"votre menu maintenant !"
 
 #: ../functions/icefit-options/icefit-options.php:302
 #: ../functions/icefit-options/icefit-options.php:306
 msgid "Reset Options"
-msgstr ""
+msgstr "Réinitialiser les options"
 
 #: ../functions/icefit-options/icefit-options.php:303
 #: ../functions/icefit-options/icefit-options.php:307
 msgid "Save all Changes"
-msgstr ""
+msgstr "Enregistrer les changements"
 
 #: ../functions/icefit-options/settings.php:16
 msgid "Chooko Lite Settings"
-msgstr ""
+msgstr "Configuration de Chooko Lite"
 
 #: ../functions/icefit-options/settings.php:26
 msgid "Go Pro"
-msgstr ""
+msgstr "Passez Pro"
 
 #: ../functions/icefit-options/settings.php:33
 msgid "Upgrade to Chooko Pro!"
-msgstr ""
+msgstr "Mettez à jour vers Chooko Pro !"
 
 #: ../functions/icefit-options/settings.php:45
 msgid "Main settings"
-msgstr ""
+msgstr "Paramètres principaux"
 
 #: ../functions/icefit-options/settings.php:52
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: ../functions/icefit-options/settings.php:53
 msgid "Upload your own logo"
-msgstr ""
+msgstr "Transférez votre propre logo"
 
 #: ../functions/icefit-options/settings.php:60
 msgid "Site Title"
-msgstr ""
+msgstr "Titre du site"
 
 #: ../functions/icefit-options/settings.php:61
 msgid ""
 "Choose \"display title\" if you want to use a text-based title instead of an "
 "uploaded logo."
 msgstr ""
+"Choisissez \"Afficher le titre\" pour utiliser une version texte de votre "
+"titre au lieu d'un logo."
 
 #: ../functions/icefit-options/settings.php:66
 msgid "Use Logo"
-msgstr ""
+msgstr "Utiliser le logo"
 
 #: ../functions/icefit-options/settings.php:67
 msgid "Display Title"
-msgstr ""
+msgstr "Afficher le titre"
 
 #: ../functions/icefit-options/settings.php:72
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: ../functions/icefit-options/settings.php:73
 msgid ""
 "Set your favicon. 16x16 or 32x32 pixels, either 8-bit or 24-bit colors. PNG "
 "(W3C standard), GIF, or ICO."
 msgstr ""
+"Définissez votre favicon. 16x16 ou 32x32 pixels, en couleur 8 ou 24 bits. "
+"Format PNG (standard W3C), GIF ou ICO."
 
 #: ../functions/icefit-options/settings.php:81
 msgid "Display Tagline"
-msgstr ""
+msgstr "Afficher le slogan"
 
 #: ../functions/icefit-options/settings.php:82
 msgid ""
 "Display your site description (tagline) on the right side of the header."
-msgstr ""
+msgstr "Afficher la description du site (slogan) du côté droit de l'en-tête."
 
 #: ../functions/icefit-options/settings.php:87
 #: ../functions/icefit-options/settings.php:113
@@ -435,7 +453,7 @@ msgstr ""
 #: ../functions/icefit-options/settings.php:162
 #: ../functions/icefit-options/settings.php:174
 msgid "Off"
-msgstr ""
+msgstr "Off"
 
 #: ../functions/icefit-options/settings.php:88
 #: ../functions/icefit-options/settings.php:112
@@ -444,69 +462,76 @@ msgstr ""
 #: ../functions/icefit-options/settings.php:161
 #: ../functions/icefit-options/settings.php:173
 msgid "On"
-msgstr ""
+msgstr "On"
 
 #: ../functions/icefit-options/settings.php:93
 msgid "Blog Index Shows"
-msgstr ""
+msgstr "La page principale du blog affiche"
 
 #: ../functions/icefit-options/settings.php:94
 msgid "Choose what content to display on Main Blog page and archives"
 msgstr ""
+"Choisissez quel contenu afficher sur la page principale du blog et les pages "
+"d'archives"
 
 #: ../functions/icefit-options/settings.php:99
 msgid "Excerpt"
-msgstr ""
+msgstr "Extrait"
 
 #: ../functions/icefit-options/settings.php:100
 msgid "Full content"
-msgstr ""
+msgstr "Contenu complet"
 
 #: ../functions/icefit-options/settings.php:106
 msgid "Responsive mode"
-msgstr ""
+msgstr "Mode \"responsive\""
 
 #: ../functions/icefit-options/settings.php:107
 msgid "Turn this setting off if you want your site to be unresponsive."
-msgstr ""
+msgstr "Désactivez cette option pour que le site ne soit plus \"responsive\"."
 
 #: ../functions/icefit-options/settings.php:124
 msgid "Custom Header"
-msgstr ""
+msgstr "En-tête personnalisée"
 
 #: ../functions/icefit-options/settings.php:131
 msgid "Display custom header on Homepage"
-msgstr ""
+msgstr "Afficher l'en-tête personnalisée sur la page d'accueil"
 
 #: ../functions/icefit-options/settings.php:132
 msgid "Enable or disable display of custom header image on the front page."
-msgstr ""
+msgstr "Affiche ou non l'image d'en-tête personnalisée sur la page d'accueil."
 
 #: ../functions/icefit-options/settings.php:143
 msgid "Display custom header on Blog Index"
-msgstr ""
+msgstr "Afficher l'en-tête personnalisée sur la page principale du blog"
 
 #: ../functions/icefit-options/settings.php:144
 msgid "Enable or disable display of custom header image on blog index pages."
 msgstr ""
+"Affiche ou non l'image d'en-tête personnalisée sur la page principale du "
+"blog."
 
 #: ../functions/icefit-options/settings.php:155
 msgid "Display custom header on Blog Posts"
-msgstr ""
+msgstr "Afficher l'en-tête personnalisée sur les pages d'articles"
 
 #: ../functions/icefit-options/settings.php:156
 msgid "Enable or disable display of custom header image on single blog posts"
 msgstr ""
+"Affiche ou non l'image d'en-tête personnalisée sur les pages d'articles du "
+"blog."
 
 #: ../functions/icefit-options/settings.php:167
 msgid "Display custom header on Pages"
-msgstr ""
+msgstr "Afficher l'en-tête personnalisée sur les pages"
 
 #: ../functions/icefit-options/settings.php:168
 msgid "Enable or disable display of custom header image on individual pages."
 msgstr ""
+"Affiche ou non l'image d'en-tête personnalisée sur les pages individuelles."
 
 #: ../functions/icefit-options/settings.php:184
 #: ../functions/icefit-options/settings.php:191
 msgid "Support and Feedback"
-msgstr ""
+msgstr "Aide et avis"
