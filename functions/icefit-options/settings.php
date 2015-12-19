@@ -57,6 +57,15 @@ function chooko_settings_template() {
 		);
 
 		$settings_options[] = array(
+			'name'          => 'Site Title',
+			'desc'          => 'Choose "display title" if you want to use a text-based title instead of an uploaded logo.',
+			'id'            => 'header_title',
+			'type'          => 'radio',
+			'default'       => 'Display Title',
+			'values'		=> array ('Use Logo', 'Display Title'),
+		);
+
+		$settings_options[] = array(
 			'name'          => 'Favicon',
 			'desc'          => 'Set your favicon. 16x16 or 32x32 pixels, either 8-bit or 24-bit colors. PNG (W3C standard), GIF, or ICO.',
 			'id'            => 'favicon',

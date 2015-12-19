@@ -163,7 +163,7 @@ function chooko_styles() {
 	$protocol = is_ssl() ? 'https' : 'http';
 	wp_enqueue_style( 'PTSans-webfonts', "$protocol://fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700", array(), null );
 }
-add_action('wp_print_styles', 'chooko_styles');
+add_action('wp_enqueue_scripts', 'chooko_styles');
 
 
 /*
