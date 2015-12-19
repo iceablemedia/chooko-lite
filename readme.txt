@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.8.1
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 
 == ABOUT CHOOKO LITE ==
 
@@ -41,6 +41,12 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 All other files are copyright 2013 Iceable Media.
 
 == CHANGELOG ==
+
+= 1.1.5 =
+March 31th, 2014
+* Loading webfonts with latin + latin extended subset to improve support for some foreign languages
+* Webfonts loading (SSL/Non-SSL): removed is_ssl() check and let browsers determine which protocol to use
+* Added paginated pages support
 
 = 1.1.4 =
 February 4th, 2014

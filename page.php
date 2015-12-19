@@ -24,7 +24,20 @@ global $header_image;
 
 		<div id="page-container" <?php post_class("left with-sidebar"); ?>>
 
-				<?php the_content(); ?>
+				<?php the_content();
+					$chooko_link_pages_args = array(
+						'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'chooko'),
+						'after'            => '</div>',
+						'link_before'      => '<span>',
+						'link_after'       => '</span>',
+						'next_or_number'   => 'number',
+						'nextpagelink'     => __('Next page', 'chooko'),
+						'previouspagelink' => __('Previous page', 'chooko'),
+						'pagelink'         => '%',
+						'echo'             => 1
+					);
+					wp_link_pages( $chooko_link_pages_args );
+				?>
 				<br class="clear" />
 				<?php edit_post_link(__('Edit', 'chooko'), '<div class="postmetadata"><span class="editlink"><span class="icon"></span>', '</span></div><br class="clear" />'); ?>
 			<?php	// Display comments section only if comments are open or if there are comments already.
