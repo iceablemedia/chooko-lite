@@ -23,20 +23,20 @@ while(have_posts()) : the_post();
 
 				the_content();
 				$chooko_link_pages_args = array(
-					'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'chooko'),
+					'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'chooko-lite'),
 					'after'            => '</div>',
 					'link_before'      => '<span>',
 					'link_after'       => '</span>',
 					'next_or_number'   => 'number',
-					'nextpagelink'     => __('Next page', 'chooko'),
-					'previouspagelink' => __('Previous page', 'chooko'),
+					'nextpagelink'     => __('Next page', 'chooko-lite'),
+					'previouspagelink' => __('Previous page', 'chooko-lite'),
 					'pagelink'         => '%',
 					'echo'             => 1
 				);
 				wp_link_pages( $chooko_link_pages_args );
 				?><br class="clear" /><?php
-				edit_post_link(__('Edit', 'chooko'), '<div class="postmetadata"><span class="editlink"><span class="icon"></span>', '</span></div><br class="clear" />');
-				
+				edit_post_link(__('Edit', 'chooko-lite'), '<div class="postmetadata"><span class="editlink"><span class="icon"></span>', '</span></div><br class="clear" />');
+
 				// Display comments section only if comments are open or if there are comments already.
 				if ( comments_open() || get_comments_number()!=0 ):
 
@@ -48,10 +48,10 @@ while(have_posts()) : the_post();
 				endif;
 
 	endwhile;
-	
+
 	else:
-		?><h2><?php _e('Not Found', 'chooko'); ?></h2><?php
-		?><p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p><?php
+		?><h2><?php _e('Not Found', 'chooko-lite'); ?></h2><?php
+		?><p><?php _e('What you are looking for isn\'t here...', 'chooko-lite'); ?></p><?php
 	endif;
 
 	?></div><?php // End page container

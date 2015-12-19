@@ -31,50 +31,50 @@ global $header_image;
 				// Echo updated date for hatom-feed - not to be displayed on front end
 				?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
 
-				?><span class="meta-author vcard author"><span class="icon"></span><?php _e('by ', 'chooko'); ?><span class="fn"><?php the_author(); ?></span></span><?php
+				?><span class="meta-author vcard author"><span class="icon"></span><?php _e('by ', 'chooko-lite'); ?><span class="fn"><?php the_author(); ?></span></span><?php
 
 				if ( has_category() ):
-				?><span class="meta-category"><span class="icon"></span><?php _e('in', 'chooko'); ?> <?php the_category(', '); ?></span><?php
+				?><span class="meta-category"><span class="icon"></span><?php _e('in', 'chooko-lite'); ?> <?php the_category(', '); ?></span><?php
 				endif;
 
 				if (comments_open() || get_comments_number()!=0 ):
 				?><span class="meta-comments"><span class="icon"></span><?php
-					comments_popup_link( __( 'No', 'chooko' ), __( '1', 'chooko' ), __( '%', 'chooko' ), 'comments-count', '' );
-					comments_popup_link( __( 'Comment', 'chooko' ), __( 'Comment', 'chooko' ), __( 'Comments', 'chooko' ), '', __('Comments Off', 'chooko') );
+					comments_popup_link( __( 'No', 'chooko-lite' ), __( '1', 'chooko-lite' ), __( '%', 'chooko-lite' ), 'comments-count', '' );
+					comments_popup_link( __( 'Comment', 'chooko-lite' ), __( 'Comment', 'chooko-lite' ), __( 'Comments', 'chooko-lite' ), '', __('Comments Off', 'chooko-lite') );
 					?></span><?php
 				endif;
 
-				edit_post_link(__('Edit', 'chooko'), '<span class="editlink"><span class="icon"></span>', '</span>');
+				edit_post_link(__('Edit', 'chooko-lite'), '<span class="editlink"><span class="icon"></span>', '</span>');
 
 				?></div><?php
 
 				?><div class="post-contents"><?php
-					
+
 					if ( '' != get_the_post_thumbnail() ) : // As recommended from the WP codex, to avoid potential failure of has_post_thumbnail()
 					?><div class="thumbnail"><?php
 					?><a href="<?php get_permalink() ?>"><?php
 					the_post_thumbnail('large', array('class' => 'scale-with-grid'));
 					?></a></div><?php
 					endif;
-					
+
 					the_content()
 
 					?><div class="clear"></div><?php
 					$args = array(
-						'before'           => '<br class="clear" /><div class="paged_nav"><span class="paged_nav_label">' . __('Pages', 'chooko') . '</span>',
+						'before'           => '<br class="clear" /><div class="paged_nav"><span class="paged_nav_label">' . __('Pages', 'chooko-lite') . '</span>',
 						'after'            => '</div>',
 						'link_before'      => '<span>',
 						'link_after'       => '</span>',
 						'next_or_number'   => 'number',
-						'nextpagelink'     => __('Next page', 'chooko'),
-						'previouspagelink' => __('Previous page', 'chooko'),
+						'nextpagelink'     => __('Next page', 'chooko-lite'),
+						'previouspagelink' => __('Previous page', 'chooko-lite'),
 						'pagelink'         => '%',
 						'echo'             => 1
 					);
 					wp_link_pages( $args );
-					
+
 					the_tags('<span class="tags"><span>', '</span><span>', '</span></span>');
-					
+
 					?></div><?php
 				?><br class="clear" /><?php
 
@@ -84,20 +84,20 @@ global $header_image;
 				if ( is_attachment() ):
 				// Use image navigation links on attachment pages, post navigation otherwise
 					if ( chooko_adjacent_image_link(false) ): // Is there a previous image ?
-					?><div class="previous"><?php previous_image_link(0, __("Previous Image", 'chooko') ); ?></div><?php
+					?><div class="previous"><?php previous_image_link(0, __("Previous Image", 'chooko-lite') ); ?></div><?php
 
 					endif;
 					if ( chooko_adjacent_image_link(true) ): // Is there a next image ?
-					?><div class="next"><?php next_image_link(0, __("Next Image",'chooko') ); ?></div><?php
+					?><div class="next"><?php next_image_link(0, __("Next Image",'chooko-lite') ); ?></div><?php
 					endif;
-				
+
 				else:
 
 					if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post?
-					?><div class="previous"><?php previous_post_link('%link', __("Previous Post", 'chooko') ); ?></div><?php
+					?><div class="previous"><?php previous_post_link('%link', __("Previous Post", 'chooko-lite') ); ?></div><?php
 					endif;
 					if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post?
-					?><div class="next"><?php next_post_link('%link', __("Next Post", 'chooko') ); ?></div><?php
+					?><div class="next"><?php next_post_link('%link', __("Next Post", 'chooko-lite') ); ?></div><?php
 					endif;
 
 				endif;
@@ -114,27 +114,27 @@ global $header_image;
 
 			?><div class="page_nav"><?php
 				if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post?
-				?><div class="previous"><?php previous_post_link('%link', __("Previous Post", 'chooko') ); ?></div><?php
+				?><div class="previous"><?php previous_post_link('%link', __("Previous Post", 'chooko-lite') ); ?></div><?php
 				endif;
 				if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post?
-				?><div class="next"><?php next_post_link('%link', __("Next Post", 'chooko') ); ?></div><?php
+				?><div class="next"><?php next_post_link('%link', __("Next Post", 'chooko-lite') ); ?></div><?php
 				endif;
 				?><br class="clear" /><?php
 			?></div><?php
 
 			endif;
-			
+
 			endwhile;
-			
+
 			else:
-			
-			?><h2><?php _e('Not Found', 'chooko'); ?></h2><?php
-			?><p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p><?php
+
+			?><h2><?php _e('Not Found', 'chooko-lite'); ?></h2><?php
+			?><p><?php _e('What you are looking for isn\'t here...', 'chooko-lite'); ?></p><?php
 
 			endif;
 
 		?></div><?php // End page container
-		
+
 		?><div id="sidebar-container" class="right"><?php
 			get_sidebar();
 		?></div><?php // End sidebar column

@@ -15,26 +15,33 @@ class Chooko_Customizer {
 		// Move default settings "background_color" in the same section as background image settings
 		// and rename the section just "Background"
 		$wp_customize->get_control( 'background_color' )->section = 'background_image';
-		$wp_customize->get_section( 'background_image' )->title = __('Background', 'chooko');
+		$wp_customize->get_section( 'background_image' )->title = __('Background', 'chooko-lite');
 
 		// Add new sections
+		if ( ! function_exists('wp_site_icon') ) :
 		$wp_customize->add_section( 'chooko_logo_favicon' , array(
-			'title'      => __( 'Logo & Favicon', 'chooko' ),
+			'title'      => __( 'Logo & Favicon', 'chooko-lite' ),
 			'priority'   => 20,
 		) );
+		else:
+		$wp_customize->add_section( 'chooko_logo_favicon' , array(
+			'title'      => __( 'Logo', 'chooko-lite' ),
+			'priority'   => 20,
+		) );
+		endif;
 
 		$wp_customize->add_section( 'chooko_blog_settings' , array(
-			'title'      => __( 'Blog Settings', 'chooko' ),
+			'title'      => __( 'Blog Settings', 'chooko-lite' ),
 			'priority'   => 80,
 		) );
 
 		$wp_customize->add_section( 'chooko_misc_settings' , array(
-			'title'      => __( 'Misc', 'chooko' ),
+			'title'      => __( 'Misc', 'chooko-lite' ),
 			'priority'   => 100,
 		) );
 
 		$wp_customize->add_section( 'chooko_more' , array(
-			'title'      => __( 'More', 'chooko' ),
+			'title'      => __( 'More', 'chooko-lite' ),
 			'priority'   => 130,
 		) );
 
@@ -46,8 +53,8 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control( $wp_customize, 'chooko_logo',
 				array(
-					'label'      => __( 'Upload your logo', 'chooko' ),
-					'description' => __('If no logo is uploaded, the site title will be displayed instead.', 'chooko'),
+					'label'      => __( 'Upload your logo', 'chooko-lite' ),
+					'description' => __('If no logo is uploaded, the site title will be displayed instead.', 'chooko-lite'),
 					'section'    => 'chooko_logo_favicon',
 					'settings'   => 'chooko_logo',
 				)
@@ -55,20 +62,22 @@ class Chooko_Customizer {
 		);
 
 		// Setting and control for favicon
-		$wp_customize->add_setting( 'chooko_favicon' , array(
-			'default'     => '',
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control( $wp_customize, 'chooko_favicon',
-				array(
-					'label'			=> __( 'Upload a custom favicon', 'chooko' ),
-					'description'	=> __('Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), GIF, or ICO.', 'chooko'),
-					'section'		=> 'chooko_logo_favicon',
-					'settings'		=> 'chooko_favicon',
+		if ( ! function_exists('wp_site_icon') ) :
+			$wp_customize->add_setting( 'chooko_favicon' , array(
+				'default'     => '',
+				'sanitize_callback' => 'esc_url_raw',
+			) );
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control( $wp_customize, 'chooko_favicon',
+					array(
+						'label'			=> __( 'Upload a custom favicon', 'chooko-lite' ),
+						'description'	=> __('Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), GIF, or ICO.', 'chooko-lite'),
+						'section'		=> 'chooko_logo_favicon',
+						'settings'		=> 'chooko_favicon',
+					)
 				)
-			)
-		);
+			);
+		endif;
 
 		// Setting and control for blog index content switch
 		$wp_customize->add_setting( 'chooko_blog_index_content' , array(
@@ -78,13 +87,13 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'chooko_blog_index_content',
 				array(
-					'label'		=> __( 'Blog Index Content', 'chooko' ),
+					'label'		=> __( 'Blog Index Content', 'chooko-lite' ),
 					'section'	=> 'chooko_blog_settings',
 					'settings'	=> 'chooko_blog_index_content',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'excerpt'	=> __( 'Excerpt', 'chooko' ),
-						'content'	=> __( 'Full content', 'chooko' )
+						'excerpt'	=> __( 'Excerpt', 'chooko-lite' ),
+						'content'	=> __( 'Full content', 'chooko-lite' )
 					)
 				)
 			)
@@ -98,13 +107,13 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'chooko_responsive_mode',
 				array(
-					'label'		=> __( 'Responsive Mode', 'chooko' ),
+					'label'		=> __( 'Responsive Mode', 'chooko-lite' ),
 					'section'	=> 'chooko_misc_settings',
 					'settings'	=> 'chooko_responsive_mode',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'chooko' ),
-						'off'	=> __( 'Off', 'chooko' )
+						'on'	=> __( 'On', 'chooko-lite' ),
+						'off'	=> __( 'Off', 'chooko-lite' )
 					)
 				)
 			)
@@ -118,13 +127,13 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'home_header_image',
 				array(
-					'label'		=> __( 'Display header on Homepage', 'chooko' ),
+					'label'		=> __( 'Display header on Homepage', 'chooko-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'home_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'chooko' ),
-						'off'	=> __( 'Off', 'chooko' )
+						'on'	=> __( 'On', 'chooko-lite' ),
+						'off'	=> __( 'Off', 'chooko-lite' )
 					)
 				)
 			)
@@ -137,13 +146,13 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'blog_header_image',
 				array(
-					'label'		=> __( 'Display header on Blog Index', 'chooko' ),
+					'label'		=> __( 'Display header on Blog Index', 'chooko-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'blog_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'chooko' ),
-						'off'	=> __( 'Off', 'chooko' )
+						'on'	=> __( 'On', 'chooko-lite' ),
+						'off'	=> __( 'Off', 'chooko-lite' )
 					)
 				)
 			)
@@ -156,13 +165,13 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'single_header_image',
 				array(
-					'label'		=> __( 'Display header on Single Posts', 'chooko' ),
+					'label'		=> __( 'Display header on Single Posts', 'chooko-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'single_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'chooko' ),
-						'off'	=> __( 'Off', 'chooko' )
+						'on'	=> __( 'On', 'chooko-lite' ),
+						'off'	=> __( 'Off', 'chooko-lite' )
 					)
 				)
 			)
@@ -175,13 +184,13 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new WP_Customize_Control( $wp_customize, 'pages_header_image',
 				array(
-					'label'		=> __( 'Display header on Pages', 'chooko' ),
+					'label'		=> __( 'Display header on Pages', 'chooko-lite' ),
 					'section'	=> 'header_image',
 					'settings'	=> 'pages_header_image',
 					'type'		=> 'radio',
 					'choices'	=> array(
-						'on'	=> __( 'On', 'chooko' ),
-						'off'	=> __( 'Off', 'chooko' )
+						'on'	=> __( 'On', 'chooko-lite' ),
+						'off'	=> __( 'Off', 'chooko-lite' )
 					)
 				)
 			)
@@ -195,8 +204,8 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new Chooko_Button_Customize_Control( $wp_customize, 'chooko_upgrade',
 				array(
-					'label'			=> __( 'Get Chooko Pro', 'chooko' ),
-					'description'	=> __( 'Unleash the full potential of Chooko with tons of additional settings, advanced features and premium support.', 'chooko'),
+					'label'			=> __( 'Get Chooko Pro', 'chooko-lite' ),
+					'description'	=> __( 'Unleash the full potential of Chooko with tons of additional settings, advanced features and premium support.', 'chooko-lite'),
 					'section'		=> 'chooko_more',
 					'settings'		=> 'chooko_upgrade',
 					'type'			=> 'button',
@@ -212,8 +221,8 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new Chooko_Button_Customize_Control( $wp_customize, 'chooko_support',
 				array(
-					'label'			=> __( 'Chooko Lite support forums', 'chooko' ),
-					'description'	=> __( 'Have a question? Need help?', 'chooko'),
+					'label'			=> __( 'Chooko Lite support forums', 'chooko-lite' ),
+					'description'	=> __( 'Have a question? Need help?', 'chooko-lite'),
 					'section'		=> 'chooko_more',
 					'settings'		=> 'chooko_support',
 					'type'			=> 'button',
@@ -229,8 +238,8 @@ class Chooko_Customizer {
 		$wp_customize->add_control(
 			new Chooko_Button_Customize_Control( $wp_customize, 'chooko_feedback',
 				array(
-					'label'			=> __( 'Rate Chooko Lite', 'chooko' ),
-					'description'	=> __( 'Like this theme? We\'d love to hear your feedback!', 'chooko'),
+					'label'			=> __( 'Rate Chooko Lite', 'chooko-lite' ),
+					'description'	=> __( 'Like this theme? We\'d love to hear your feedback!', 'chooko-lite'),
 					'section'		=> 'chooko_more',
 					'settings'		=> 'chooko_feedback',
 					'type'			=> 'button',
@@ -247,7 +256,7 @@ class Chooko_Customizer {
 			array( 'customize-controls' )
 		);
 
-		wp_register_script( 
+		wp_register_script(
 			  'chooko-customizer-section',
 			  get_template_directory_uri() . '/inc/customizer/js/chooko-customizer-section.js',
 			  array( 'jquery','jquery-ui-core','jquery-ui-button','customize-controls' ),
@@ -255,7 +264,7 @@ class Chooko_Customizer {
 			  true
 		);
 		$chooko_customizer_section_l10n = array(
-			'upgrade_pro' => __( 'Upgrade to Chooko Pro!', 'chooko' ),
+			'upgrade_pro' => __( 'Upgrade to Chooko Pro!', 'chooko-lite' ),
 		);
 		wp_localize_script( 'chooko-customizer-section', 'chooko_customizer_section_l10n', $chooko_customizer_section_l10n );
 		wp_enqueue_script( 'chooko-customizer-section' );
@@ -299,7 +308,7 @@ function chooko_sanitize_on_off( $input ){
 }
 
 function chooko_sanitize_button( $input ){
-	return '';	
+	return '';
 }
 
 ?>

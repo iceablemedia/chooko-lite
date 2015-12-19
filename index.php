@@ -16,28 +16,28 @@ global $header_image;
 
 	/* SEARCH CONDITIONAL TITLE */
 	if ( is_search() ):
-	?><h1 class="page-title"><?php _e('Search Results for ', 'chooko'); ?>"<?php the_search_query() ?>"</h1><?php
+	?><h1 class="page-title"><?php _e('Search Results for ', 'chooko-lite'); ?>"<?php the_search_query() ?>"</h1><?php
 	endif;
-		
+
 	/* TAG CONDITIONAL TITLE */
 	if ( is_tag() ):
-	?><h1 class="page-title"><?php _e('Tag: ', 'chooko'); single_tag_title(); ?></h1><?php
+	?><h1 class="page-title"><?php _e('Tag: ', 'chooko-lite'); single_tag_title(); ?></h1><?php
 	endif;
-					
+
 	/* CATEGORY CONDITIONAL TITLE */
 	if ( is_category() ):
-	?><h1 class="page-title"><?php _e('Category: ', 'chooko'); single_cat_title(); ?></h1><?php
+	?><h1 class="page-title"><?php _e('Category: ', 'chooko-lite'); single_cat_title(); ?></h1><?php
 	endif;
 
 	/* ARCHIVES CONDITIONAL TITLE */
 	if ( is_day() ):
-	?><h1 class="page-title"><?php _e('Daily archives: ', 'chooko'); echo get_the_time('F jS, Y'); ?></h1><?php
+	?><h1 class="page-title"><?php _e('Daily archives: ', 'chooko-lite'); echo get_the_time('F jS, Y'); ?></h1><?php
 	endif;
 	if ( is_month() ):
-	?><h1 class="page-title"><?php _e('Monthly archives: ', 'chooko'); echo get_the_time('F, Y'); ?></h1><?php
+	?><h1 class="page-title"><?php _e('Monthly archives: ', 'chooko-lite'); echo get_the_time('F, Y'); ?></h1><?php
 	endif;
 	if ( is_year() ):
-	?><h1 class="page-title"><?php _e('Yearly archives: ', 'chooko'); echo get_the_time('Y'); ?></h1><?php
+	?><h1 class="page-title"><?php _e('Yearly archives: ', 'chooko-lite'); echo get_the_time('Y'); ?></h1><?php
 	endif;
 
 	/* DEFAULT CONDITIONAL TITLE */
@@ -65,19 +65,19 @@ global $header_image;
 					?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
 
 					?><span class="meta-author vcard author"><span class="icon"></span><?php
-						_e('by ', 'chooko');
+						_e('by ', 'chooko-lite');
 						?><span class="fn"><?php the_author(); ?></span><?php
 					?></span><?php
 
-					?><span class="meta-category"><span class="icon"></span><?php _e('in', 'chooko'); ?> <?php the_category(', '); ?></span><?php
+					?><span class="meta-category"><span class="icon"></span><?php _e('in', 'chooko-lite'); ?> <?php the_category(', '); ?></span><?php
 					if (comments_open() || get_comments_number()!=0 ):
 					?><span class="meta-comments"><span class="icon"></span><?php
-						comments_popup_link( __( 'No Comment', 'chooko' ), __( '1 Comment', 'chooko' ), __( '% Comments', 'chooko' ), '', __('Comments Off', 'chooko'), 'chooko' );
+						comments_popup_link( __( 'No Comment', 'chooko-lite' ), __( '1 Comment', 'chooko-lite' ), __( '% Comments', 'chooko-lite' ), '', __('Comments Off', 'chooko-lite'), 'chooko-lite' );
 					?></span><?php
 					endif;
 				endif;
 
-					edit_post_link(__('Edit', 'chooko'), '<span class="editlink"><span class="icon"></span>', '</span>');
+					edit_post_link(__('Edit', 'chooko-lite'), '<span class="editlink"><span class="icon"></span>', '</span>');
 				?></div><?php
 
 				?><div class="post-contents"><?php
@@ -107,15 +107,15 @@ global $header_image;
 
 			if ( is_search() ): // Empty search results
 
-				?><h2><?php _e('Not Found', 'chooko'); ?></h2><?php
-				?><p><?php echo sprintf( __('Your search for "%s" did not return any result.', 'chooko'), get_search_query() ); ?><br /><?php
-				_e('Would you like to try another search ?', 'chooko'); ?></p><?php
+				?><h2><?php _e('Not Found', 'chooko-lite'); ?></h2><?php
+				?><p><?php echo sprintf( __('Your search for "%s" did not return any result.', 'chooko-lite'), get_search_query() ); ?><br /><?php
+				_e('Would you like to try another search ?', 'chooko-lite'); ?></p><?php
 				get_search_form();
 
 			else: // Empty loop (this should never happen!)
 
-				?><h2><?php _e('Not Found', 'chooko'); ?></h2><?php
-				?><p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p><?php
+				?><h2><?php _e('Not Found', 'chooko-lite'); ?></h2><?php
+				?><p><?php _e('What you are looking for isn\'t here...', 'chooko-lite'); ?></p><?php
 
 			endif;
 
@@ -123,11 +123,11 @@ global $header_image;
 
 		?><div class="page_nav"><?php
 			if ( null != get_next_posts_link() ):
-			?><div class="previous"><?php next_posts_link( __('Previous Posts', 'chooko') ); ?></div><?php
+			?><div class="previous"><?php next_posts_link( __('Previous Posts', 'chooko-lite') ); ?></div><?php
 			endif;
 
 			if ( null != get_previous_posts_link() ):
-			?><div class="next"><?php previous_posts_link( __('Next Posts', 'chooko') ); ?></div><?php
+			?><div class="next"><?php previous_posts_link( __('Next Posts', 'chooko-lite') ); ?></div><?php
 			endif;
 		?></div><?php
 

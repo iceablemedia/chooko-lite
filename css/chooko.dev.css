@@ -338,6 +338,24 @@ a img.aligncenter {
 	font-size: 80%;
 }
 
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    clip: auto !important;
+    display: block;
+    height: auto;
+    left: 5px;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
 /* #Header */
 
 #header { padding: 40px 0px; }
@@ -424,7 +442,7 @@ a img.aligncenter {
 
 #navbar ul li:hover,
 #navbar ul li:focus {
-	background-color: #ffc2c2;	
+	background-color: #ffc2c2;
 }
 
 #navbar ul li,
@@ -450,7 +468,7 @@ a img.aligncenter {
 }
 
 #navbar .current-menu-item {
-	background-color: #ffc2c2;	
+	background-color: #ffc2c2;
 }
 
 #navbar .current-menu-item a,
@@ -643,7 +661,7 @@ h3.entry-title {
 	background-color: #6b5344;
 	background-image: url('../img/arrow-right.png');
 	background-position: 100% center;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
     display: block;
     float: right;
     height: 30px;
@@ -747,7 +765,7 @@ h3.entry-title {
 
 /* #Single Post */
 
-.single-post .post-contents {	
+.single-post .post-contents {
 	float: none;
 	width: 680px;
 	margin-bottom: 0px;
@@ -878,7 +896,7 @@ h3.entry-title {
 	background-color: #eb9f9f;
 	background-image: url('../img/arrow-right.png');
 	background-position: 100% center;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
     display: block;
     float:right;
     height: 30px;
@@ -1015,7 +1033,7 @@ h3.entry-title {
 /* #Comment form */
 
 p.form-allowed-tags {
-	display: none; 
+	display: none;
 }
 
 p.comment-form-author,
@@ -1026,7 +1044,7 @@ p.comment-form-url
 }
 
 #respond #commentform label .required {
-	color: red; 
+	color: red;
 }
 
 #cancel-comment-reply-link {
@@ -1509,7 +1527,7 @@ blockquote, blockquote p {
 	font-style: italic;
 }
 
-blockquote {	
+blockquote {
 	margin: 0 40px 20px 40px;
 	padding: 10px 20px;
 	border-left: 3px solid #DDD;
@@ -1566,7 +1584,7 @@ th {
 }
 
 tr {
-	 
+
 }
 
 tr:nth-child(even) {
@@ -1845,7 +1863,7 @@ or wrap each row of columns in a <div class="row"> */
 /* #Tablet (Portrait) | Design for a width of 768px */
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-	
+
 	#main-wrap { width: 768px!important; }
 
 	#page-container > div,
@@ -1875,10 +1893,10 @@ or wrap each row of columns in a <div class="row"> */
 
 	/* No sidebar: Container= 766 */
 	#footer .container > ul > li { width: 161px; }
-	
+
 	/* With Sidebar: Container= 576 */
 	#page-container.with-sidebar { width: 576px; padding: 0; }
-	
+
 	#sidebar-container { width: 172px; }
 
 	#logo {
@@ -1937,7 +1955,7 @@ or wrap each row of columns in a <div class="row"> */
 	#sidebar-container.left {
 		width: 161px;
 		margin-left: 15px!important;
-	}	
+	}
 	#footer .container {
 		width: 768px;
 	}
@@ -2005,7 +2023,7 @@ or wrap each row of columns in a <div class="row"> */
 		margin: 20px auto;
 	}
 	#logo {
-		text-align: center 
+		text-align: center
 	}
 	#navbar > .menu-container {
 		width: 300px;
@@ -2031,7 +2049,7 @@ or wrap each row of columns in a <div class="row"> */
     }
     h1.entry-title {
     	margin: 0 10px 40px 10px;
-    	width: 260px;	    
+    	width: 260px;
     }
 	.post-contents,
 	.single-post .post-contents {
@@ -2058,7 +2076,7 @@ or wrap each row of columns in a <div class="row"> */
 	     margin-bottom: 10px;
 	}
 	.sub-footer-left p {
-	     padding: 0; 
+	     padding: 0;
 	}
 }
 

@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 1.2.0
+Tested up to: 4.3.1
+Stable tag: 1.2.1
 
 == ABOUT CHOOKO LITE ==
 
@@ -54,6 +54,13 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 == CHANGELOG ==
 
+= 1.2.1 =
+November 4th, 2015
+* Disabled the "favicon" theme setting for WordPress 4.3+ (no longer useful since WP 4.3+ includes wp_site_icon)
+* Added screen-reader-text CSS support
+* Changed textdomain to theme slug: 'chooko-lite'
+* Tested with WordPress 4.3
+
 = 1.2.0 =
 July 22th, 2015
 * Replaced theme options panel with Customizer implementation
@@ -66,7 +73,7 @@ May 26th, 2015
 * Tested with WP 4.2.2
 * Enhanced menu items: the whole item area is now clickable, not just the text
 * Added option to display tagline
-* Added option to chose between "excerpt" or "full content" for the blog index page  
+* Added option to chose between "excerpt" or "full content" for the blog index page
 * Added option to switch off responsiveness
 * Made all strings translatable, including the backend
 * Updated POT file
