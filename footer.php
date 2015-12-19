@@ -28,8 +28,9 @@
 			$footer_note = str_replace("%date%", $copyright_years, $footer_note);
 			$footer_note = str_replace("%sitename%", get_bloginfo('name'), $footer_note );
 			$footer_note = htmlspecialchars_decode( $footer_note );
+			$allowed_html = wp_kses_allowed_html( 'post' );
 		?>
-		<div class="sub-footer-left"><p><?php echo $footer_note; ?></p></div>
+		<div class="sub-footer-left"><p><?php echo wp_kses( $footer_note, $allowed_html ); ?></p></div>
 		<div class="sub-footer-right">
 			<?php	$footer_menu = array( 'theme_location' => 'footer-menu', 'depth' => 1);
 					wp_nav_menu( $footer_menu ); ?>

@@ -494,6 +494,8 @@ h3.entry-title {
 
 .single-post .thumbnail {
 	margin-left: 0;
+	float: none;
+	text-align: center;
 }
 
 .single-post .tags {
@@ -1384,7 +1386,7 @@ pre {
 	display: block;
 	font-family: 'Courier New', Courier, Monospace;
 	padding: 15px;
-	word-wrap: break-word;
+	overflow-x: scroll;
 }
 
 /* Forms */

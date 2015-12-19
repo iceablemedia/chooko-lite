@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.5.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 == ABOUT CHOOKO LITE ==
 
@@ -34,7 +34,7 @@ Additional documentation and free support forums can be found at http://www.icea
 
 == LICENSE ==
 
-This theme is released under the terms of the GNU GPLv3 License.
+This theme is released under the terms of the GNU GPLv2 License.
 Please refer to license.txt for more information.
 
 == CREDITS ==
@@ -49,6 +49,18 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 All other files are copyright 2013 Iceable Media.
 
 == CHANGELOG ==
+
+= 1.0.2 =
+May 3rd, 2013
+* Fixed: Changed license to GPLv2 for improved compatibility
+* Fixed: Escaping user-entered data before printing
+* Fixed: Appropriately prefixed all custom functions
+* Fixed: Proper enqueuing of google webfonts
+* Fixed: "Previous" and "Next" posts links were mixed up on single post view
+* Removed: Unnecessary enqueuing of jQuery
+* Removed: Unnecessary use of function_exist() conditional
+* Removed: Unused images files from the option framework
+* Updated: Author URI
 
 = 1.0.1 =
 April 19th, 2013

@@ -79,10 +79,10 @@
 
 			<div class="page_nav">
 				<?php if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post? ?>
-				<div class="next"><?php previous_post_link('%link', "Next Post"); ?></div>
+				<div class="previous"><?php previous_post_link('%link', "Previous Post"); ?></div>
 				<?php endif; ?>
 				<?php if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post? ?>
-				<div class="previous"><?php next_post_link('%link', "Previous Post"); ?></div>
+				<div class="next"><?php next_post_link('%link', "Next Post"); ?></div>
 				<?php endif; ?>
 				<br class="clear" />
 			</div>

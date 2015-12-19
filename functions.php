@@ -54,6 +54,8 @@ function icefit_styles() {
 	wp_enqueue_style( 'prettyPhoto' );
 	wp_register_style( 'dynamic-styles', site_url() . '/index.php?dynamiccss=1');
 	wp_enqueue_style( 'dynamic-styles' );
+	wp_enqueue_style( 'http://fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700', array(), null );
+
 }
 add_action('wp_print_styles', 'icefit_styles');
 
@@ -63,7 +65,6 @@ add_editor_style();
 /*-------------------- Enqueue javascripts --------------------*/
 
 function icefit_scripts() {
-	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/icefit.js', array('jquery'));
 	wp_enqueue_script('hoverIntent',    get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));	// Submenus
 	wp_enqueue_script('superfish',      get_template_directory_uri() . '/js/superfish.js', array('jquery'));	// Submenus
@@ -76,13 +77,13 @@ add_action('wp_enqueue_scripts', 'icefit_scripts');
 add_theme_support( 'automatic-feed-links' );
 
 /*-------------------- Add Post Thumbnails Support -------------------*/
-if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'post-thumbnails' );
+add_theme_support( 'post-thumbnails' );
 
 /*-------------------- WP unwanted behaviors fix --------------------*/
 
 /* Remove rel tags in category links (HTML5 invalid) */
-add_filter( 'the_category', 'remove_rel_cat' ); 
-function remove_rel_cat( $text ) {
+add_filter( 'the_category', 'icefit_remove_rel_cat' ); 
+function icefit_remove_rel_cat( $text ) {
 	$text = str_replace(' rel="category"', "", $text);
 	$text = str_replace(' rel="category tag"', "", $text);
 	return $text;
@@ -90,8 +91,8 @@ function remove_rel_cat( $text ) {
 
 /* Fix for a known issue with enclosing shortcodes and wpauto */
 /* Credits : Johann Heyne */
-add_filter('the_content', 'shortcode_empty_paragraph_fix');
-function shortcode_empty_paragraph_fix($content) {
+add_filter('the_content', 'icefit_shortcode_empty_paragraph_fix');
+function icefit_shortcode_empty_paragraph_fix($content) {
 	$array = array (
 		'<p>['    => '[', 
 		']</p>'   => ']', 
@@ -103,14 +104,14 @@ function shortcode_empty_paragraph_fix($content) {
 
 /* Improved version of clean_pre */
 /* Based on a work by Emrah Gunduz */
-add_filter( 'the_content', 'protect_pre' );
+add_filter( 'the_content', 'icefit_protect_pre' );
 
-function protect_pre($pee) {
-	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'eg_clean_pre', $pee );
+function icefit_protect_pre($pee) {
+	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'icefit_eg_clean_pre', $pee );
 	return $pee;
 }
 
-function eg_clean_pre($matches) {
+function icefit_eg_clean_pre($matches) {
 	if ( is_array($matches) )
 		$text = $matches[1] . $matches[2] . "</pre>";
 	else
@@ -121,19 +122,19 @@ function eg_clean_pre($matches) {
 
 /*------------------- Finds whether post page needs comments pagination links ------------------*/
 
-function page_has_comments_nav() {
+function icefit_page_has_comments_nav() {
 	global $wp_query;
 	return ($wp_query->max_num_comment_pages > 1);
 }
 
-function page_has_next_comments_link() {
+function icefit_page_has_next_comments_link() {
 	global $wp_query;
 	$max_cpage = $wp_query->max_num_comment_pages;
 	$cpage = get_query_var( 'cpage' );	
 	return ( $max_cpage > $cpage );
 }
 
-function page_has_previous_comments_link() {
+function icefit_page_has_previous_comments_link() {
 	$cpage = get_query_var( 'cpage' );	
 	return ($cpage > 1);
 }
@@ -319,8 +320,8 @@ add_shortcode('gallery', 'icefit_gallery_shortcode');
 
 /*-------------------- Add prettyPhoto tag to the gallery --------------------*/
 
-add_filter( 'wp_get_attachment_link', 'sant_prettyadd');
-function sant_prettyadd ($content) {
+add_filter( 'wp_get_attachment_link', 'icefit_sant_prettyadd');
+function icefit_sant_prettyadd ($content) {
 	$content = preg_replace("/<a/","<a rel=\"prettyPhoto[gal]\"",$content,1);
 	return $content;
 }
@@ -331,8 +332,8 @@ register_nav_menu( 'footer-menu', 'Footer menu' );
 
 /* --------------- Add parent Class to parent menu items ----------------- */
 
-add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
-function add_menu_parent_class( $items ) {
+add_filter( 'wp_nav_menu_objects', 'icefit_add_menu_parent_class' );
+function icefit_add_menu_parent_class( $items ) {
 	$parents = array();
 	foreach ( $items as $item ) {
 		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
@@ -350,7 +351,7 @@ function add_menu_parent_class( $items ) {
 
 /* -------------- Create dropdown menu (used in responsive mode) ----------- */
 
-function dropdown_nav_menu () {
+function icefit_dropdown_nav_menu () {
 	$menu_name = 'primary';
 	if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
 		if ($menu = wp_get_nav_menu_object( $locations[ $menu_name ] ) ) {

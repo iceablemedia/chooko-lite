@@ -28,12 +28,12 @@
 	<?php wp_list_comments( array('avatar_size' => 64 ) );?>
 	</ol>
 
-	<?php if (page_has_comments_nav() ): ?>
+	<?php if (icefit_page_has_comments_nav() ): ?>
 	<div class="comments_nav">
-		<?php if ( page_has_previous_comments_link() ) : ?>
+		<?php if ( icefit_page_has_previous_comments_link() ) : ?>
 		<div class="previous"><?php previous_comments_link( __('Older comments', 'icefit') ) ?></div>
 		<?php endif; ?>
-		<?php if ( page_has_next_comments_link() ) : ?>
+		<?php if ( icefit_page_has_next_comments_link() ) : ?>
 		<div class="next"><?php next_comments_link( __('Newer comments', 'icefit') ) ?></div>
 		<?php endif; ?>
 	</div>
