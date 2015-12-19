@@ -88,7 +88,8 @@ global $header_image;
 					?></div><?php
 					endif;
 					?><div class="post-content"><?php
-				if ( get_post_format() || post_password_required() || "Full content" == chooko_get_option('blog_index_shows') )
+				if ( get_post_format() || post_password_required()
+				|| "content" == get_theme_mod('chooko_blog_index_content') )
 						the_content();
 					else the_excerpt();
 					?></div><?php

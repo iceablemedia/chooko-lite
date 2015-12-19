@@ -50,8 +50,8 @@ while(have_posts()) : the_post();
 	endwhile;
 	
 	else:
-		?><h2><?php _e('Not Found', 'boldr'); ?></h2><?php
-		?><p><?php _e('What you are looking for isn\'t here...', 'boldr'); ?></p><?php
+		?><h2><?php _e('Not Found', 'chooko'); ?></h2><?php
+		?><p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p><?php
 	endif;
 
 	?></div><?php // End page container

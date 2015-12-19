@@ -31,6 +31,9 @@ function chooko_setup(){
 	register_nav_menu( 'primary', 'Navigation menu' );
 	register_nav_menu( 'footer-menu', 'Footer menu' );
 
+	/* Title tag support */
+	add_theme_support( 'title-tag' );
+
 	/* Post Thumbnails Support */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 260, 260, true );
@@ -63,29 +66,14 @@ function chooko_content_width() {
 add_action( 'template_redirect', 'chooko_content_width' );
 
 /*
- * Page title
+ * Page title (for WordPress < 4.1 )
  */
-function chooko_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'chooko' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'chooko_wp_title', 10, 2 );
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	function chooko_render_title() {
+		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
+	}
+	add_action( 'wp_head', 'chooko_render_title' );
+endif;
 
 /*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
@@ -157,7 +145,7 @@ function chooko_styles() {
 	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
 	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
 
-	$responsive_mode = chooko_get_option('responsive_mode');
+	$responsive_mode = get_theme_mod('chooko_responsive_mode');
 
 	if ($responsive_mode != 'off'):
 		$stylesheet = '/css/chooko.min.css';
@@ -186,6 +174,13 @@ function chooko_styles() {
 }
 add_action('wp_enqueue_scripts', 'chooko_styles');
 
+/*
+ * Register editor style
+ */
+function chooko_editor_styles() {
+	add_editor_style('css/editor-style.css');
+}
+add_action( 'init', 'chooko_editor_styles' );
 
 /*
  * Enqueue Javascripts
@@ -328,8 +323,9 @@ function chooko_adjacent_image_link($prev = true) {
 }
 
 /*
- * Framework Elements
+ * Customizer
  */
-include_once('functions/icefit-options/settings.php'); // Admin Settings Panel
+
+require_once 'inc/customizer/customizer.php';
 
 ?>
