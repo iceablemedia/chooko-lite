@@ -20,13 +20,6 @@ function chooko_get_option($option) {
 	return $value;
 }
 
-// Custom function to get all settings (returns an array of all settings)
-function chooko_get_settings() {
-	global $chooko_settings_slug;
-	$chooko_settings = get_option($chooko_settings_slug);
-	return $chooko_settings;
-}
-
 // Adds "Theme option" link under "Appearance" in WP admin panel
 function chooko_settings_add_admin() {
 	global $menu;
@@ -143,7 +136,6 @@ function chooko_settings_machine($options) {
 			$output .= '</div>';
 		} 
 	}
-	update_option($chooko_settings_slug,$chooko_settings);	
 	return $output;
 }
 
@@ -223,27 +215,6 @@ function chooko_settings_save_nojs() {
 	// Updates settings in the database
 	update_option($chooko_settings_slug,$chooko_settings);	
 }
-
-// Update settings template in the database upon theme activation
-function chooko_settings_theme_activation() {
-	global $chooko_settings_slug;
-	// Get current settings from the database
-	$chooko_settings = get_option($chooko_settings_slug);
-	// Get the settings template
-	$options = chooko_settings_template();
-	// Updates all settings
-	foreach($options as $option_array){
-		if ($option_array['type'] != 'start_menu' && $option_array['type'] != 'end_menu') {
-			$id = $option_array['id'];
-			if ( !isset( $chooko_settings[$id] ) )
-				$chooko_settings[$id] = stripslashes($option_array['default']);
-		}
-
-	}
-	// Updates settings in the database
-	update_option($chooko_settings_slug,$chooko_settings);	
-}
-add_action('after_switch_theme', 'chooko_settings_theme_activation');
 
 // Outputs the settings panel
 function chooko_settings_page(){

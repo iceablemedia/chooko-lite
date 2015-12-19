@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.9.1
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 
 == ABOUT CHOOKO LITE ==
 
@@ -41,6 +41,12 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 All other files are copyright 2013 Iceable Media.
 
 == CHANGELOG ==
+
+= 1.1.7 =
+June 16th, 2014
+* Removed unused function chooko_get_settings()
+* Removed unnecessary function that updated chooko_settings in the database upon activation. Now saving/updating only upon user action (when user clicks "save changes" in Theme options)
+* Using sane defaults (No setting is saved in the database without explicit user action)
 
 = 1.1.6 =
 May 19th, 2014
