@@ -124,6 +124,25 @@ function chooko_settings_template() {
 	$settings_options[] = array('type' => 'end_menu');
 // END PAGE 2
 
+// START PAGE 3
+	$settings_options[] = array(
+		'name'          => 'Support and Feedback',
+		'type'          => 'start_menu',
+		'id'            => 'support_feedback',
+		'icon'          => 'network',
+	);
+
+		$settings_options[] = array(
+			'name'          => 'Support and Feedback',
+			'desc'          => '',
+			'id'            => 'support_feedback',
+			'type'          => 'support_feedback',
+			'default'       => '',
+		);
+
+	$settings_options[] = array('type' => 'end_menu');
+// END PAGE 3
+
 	return $settings_options;
 }
 ?>

@@ -121,7 +121,22 @@ function chooko_settings_machine($options) {
 							<li><strong>Cross-browsers support</strong>, optimized for IE8+, Firefox, Chrome, Safari and Opera (note: IE7 and older are no longer supported.)</li>
 							<li>Lifetime <strong>free updates</strong> and continued support for the <strong>latest WordPress versions</strong></li>
 							</ul>';
-			$output .= '<a href="http://www.iceablethemes.com/shop/chooko-pro/" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
+			$output .= '<a href="http://www.iceablethemes.com/shop/chooko-pro/?utm_source=lite_theme&utm_medium=go_pro&utm_campaign=chooko_lite" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
+		}
+		elseif ( $arg['type'] == "support_feedback" )
+		{
+			$output .= '<h3>Get Support</h3>'."\n";
+			$output .= '<p>Have a question? Need help?</p>';
+			$output .= '<p><a href="http://www.iceablethemes.com/forums/forum/free-support-forum/chooko-lite/?utm_source=lite_theme&utm_medium=support_forums&utm_campaign=chooko_lite" target="_blank" class="button-primary">Visit the free Chooko Lite support forums</a></p>';		
+
+			$output .= '<h3>Give Feedback</h3>'."\n";
+			$output .= '<p>Like this theme? We\'d love to hear your feedback!</p>';
+			$output .= '<p><a href="http://wordpress.org/support/view/theme-reviews/chooko-lite" target="_blank" class="button-primary">Rate and review Chooko Lite at WordPress.org</a></p>';
+
+			$output .= '<h3>Get social!</h3>'."\n";
+			$output .= '<p>Follow and like IceableThemes!</p>';
+			$output .= '<p id="social"></p>';
+ 
 		}
 		elseif ( $arg['type'] == "end_menu" )
 		{
