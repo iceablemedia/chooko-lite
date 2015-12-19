@@ -151,37 +151,29 @@ function icefit_improved_trim_excerpt($text) {
 		$text = preg_replace('@<style[^>]*?>.*?</style>@si', '', $text);
 		$text = preg_replace('@<p class="wp-caption-text"[^>]*?>.*?</p>@si', '', $text);
     	$text = str_replace('\]\]\>', ']]&gt;', $text);
-    	$text = strip_tags($text, '<p><i><em><b><a><strong>');
     	$excerpt_length = 50;
     	$words = explode(' ', $text, $excerpt_length + 1);
     	if (count($words)> $excerpt_length) {
 			array_pop($words);
-			array_push($words, '... <div class="read-more"><a href="'.get_permalink($post->ID).'">'.'Read More'.'</a></div>');
-			$text = implode(' ', $words);
-		} else {
-			$text .= '<div class="read-more"><a href="'.get_permalink($post->ID).'">'.'Read More'.'</a></div>';
+			$text = implode(' ', $words)."...";
 		}
+    	$text = strip_tags($text, '<br><p><i><em><b><a><strong>');
+
+    	if ( extension_loaded('tidy') ) {
+	    	$tidy = new tidy();
+	    	$tidy->parseString($text,array('show-body-only'=>true,'wrap'=>'0'),'utf8');
+	    	$tidy->cleanRepair();
+	    	$text = $tidy;
+    	}
+    	
+		$text .= '<div class="read-more"><a href="'.get_permalink($post->ID).'">'.__('Read More', 'icefit').'</a></div>';
 	}
 	return $text;
 }
 
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'icefit_improved_trim_excerpt');
-
-function icefit_short_excerpt($content) {
-		$content = preg_replace('@<script[^>]*?>.*?</script>@si', '', $content);
-		$content = preg_replace('@<style[^>]*?>.*?</style>@si', '', $content);
-		$content = preg_replace('@<p class="wp-caption-text"[^>]*?>.*?</p>@si', '', $content);	
-    	$content = str_replace('\]\]\>', ']]&gt;', $content);
-    	$content = strip_tags($content, '<p><i><em><b><a><strong>');
-    	$excerpt_length = 15;
-    	$words = explode(' ', $content, $excerpt_length + 1);
-    	if (count($words)> $excerpt_length) {
-			array_pop($words);
-			array_push($words, '...');
-			$content = implode(' ', $words);
-		}
-	return $content;
+if ( icefit_get_option('blog_index_content') == "Icefit Improved Excerpt" ) {
+	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+	add_filter('get_the_excerpt', 'icefit_improved_trim_excerpt');
 }
 
 /*--------------------- Rewrite Gallery Shortcode ---------------------*/

@@ -1,0 +1,256 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Chooko Lite 1.0.1\n"
+"POT-Creation-Date: 2013-04-19 11:58+0100\n"
+"PO-Revision-Date: 2013-04-19 11:58+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:22
+msgid "404"
+msgstr ""
+
+#: ../404.php:24 ../header.php:22 ../index.php:151 ../page.php:108
+#: ../single.php:116
+msgid "Not Found"
+msgstr ""
+
+#: ../404.php:25 ../index.php:152 ../page.php:109 ../single.php:117
+msgid "What you are looking for isn't here..."
+msgstr ""
+
+#: ../comments.php:17
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:24
+#, php-format
+msgid "One Response to %2$s"
+msgstr ""
+
+#: ../comments.php:34
+msgid "Older comments"
+msgstr ""
+
+#: ../comments.php:37
+msgid "Newer comments"
+msgstr ""
+
+#: ../comments.php:49
+msgid "Comments are closed."
+msgstr ""
+
+#: ../functions.php:169
+msgid "Read More"
+msgstr ""
+
+#: ../functions.php:377
+msgid "Default Sidebar"
+msgstr ""
+
+#: ../functions.php:389
+msgid "Footer"
+msgstr ""
+
+#: ../index.php:78
+msgid "Search Results for "
+msgstr ""
+
+#: ../index.php:83
+msgid "Tag: "
+msgstr ""
+
+#: ../index.php:88
+msgid "Category: "
+msgstr ""
+
+#: ../index.php:112 ../single.php:37
+msgid "by "
+msgstr ""
+
+#: ../index.php:113 ../single.php:38
+msgid "in"
+msgstr ""
+
+#: ../index.php:116
+msgid "No Comment"
+msgstr ""
+
+#: ../index.php:116
+msgid "1 Comment"
+msgstr ""
+
+#: ../index.php:116
+msgid "% Comments"
+msgstr ""
+
+#: ../index.php:116 ../single.php:42
+msgid "Comments Off"
+msgstr ""
+
+#: ../index.php:120 ../page.php:94 ../single.php:45
+msgid "Edit"
+msgstr ""
+
+#: ../index.php:158
+msgid "Previous Posts"
+msgstr ""
+
+#: ../index.php:161
+msgid "Next Posts"
+msgstr ""
+
+#: ../sidebar.php:16
+msgid "Recent Posts"
+msgstr ""
+
+#: ../sidebar.php:22
+msgid "Archives"
+msgstr ""
+
+#: ../sidebar.php:28
+msgid "Meta"
+msgstr ""
+
+#: ../single.php:41
+msgid "No"
+msgstr ""
+
+#: ../single.php:41
+msgid "1"
+msgstr ""
+
+#: ../single.php:41
+msgid "%"
+msgstr ""
+
+#: ../single.php:42
+msgid "Comment"
+msgstr ""
+
+#: ../single.php:42
+msgid "Comments"
+msgstr ""
+
+#: ../single.php:61
+msgid "Pages"
+msgstr ""
+
+#: ../single.php:66
+msgid "Next page"
+msgstr ""
+
+#: ../single.php:67
+msgid "Previous page"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:17
+#: ../functions/icefit-slides/icefit-slides.php:19
+msgid "Slides"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:18
+msgid "Slide"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:20
+msgid "All Slides"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:21
+msgid "Add New"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:22
+msgid "Add New Slide"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:23
+msgid "Edit Slide"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:24
+msgid "New Slide"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:25
+msgid "View Slide"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:26
+msgid "Slides Archive"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:27
+msgid "Search Slides"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:28
+msgid "No Slide Found"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:29
+msgid "No Slide found in Trash"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:47
+#: ../functions/icefit-slides/icefit-slides.php:57
+msgid "Slides Categories"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:48
+msgid "Slides Category"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:49
+msgid "Search Category"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:50
+msgid "All Categories"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:51
+msgid "Parent Category"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:52
+msgid "Parent Category:"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:53
+msgid "Edit Category"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:54
+msgid "Update Category"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:55
+msgid "Add New Category"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:56
+msgid "New Category Name"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:76
+msgid "Title"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:77
+msgid "Thumbnail"
+msgstr ""
+
+#: ../functions/icefit-slides/icefit-slides.php:79
+msgid "Category"
+msgstr ""

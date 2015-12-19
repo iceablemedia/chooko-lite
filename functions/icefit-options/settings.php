@@ -83,6 +83,15 @@ function icefit_settings_template() {
 		);
 
 		$settings_options[] = array(
+			'name'          => 'Blog Index Content',
+			'desc'          => 'Select what content should be displayed on blog index pages.',
+			'id'            => 'blog_index_content',
+			'type'          => 'select',
+			'default'       => 'Full Content',
+			'values'		=> array ('Full Content', 'Default Excerpt', 'Icefit Improved Excerpt'),
+		);
+
+		$settings_options[] = array(
 			'name'          => 'Activate slider on blog page',
 			'desc'          => 'Enable slideshow on blog index page.',
 			'id'            => 'blog_slider',

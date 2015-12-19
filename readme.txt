@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.5.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 == ABOUT CHOOKO LITE ==
 
@@ -49,6 +49,13 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 All other files are copyright 2013 Iceable Media.
 
 == CHANGELOG ==
+
+= 1.0.1 =
+April 19th, 2013
+* Fixed: Icefit Improved Excerpt enhanced to preserve some styling tags without breaking the markup
+* Added: Option to choose what content to display on blog index pages (Full content, WP default excerpt or Icefit improved excerpt)
+* Added: /languages folder with default po and mo files and POT file for localization
+* Changed: Updated Theme URI to Chooko Lite demo site
 
 = 1.0 =
 April 9th, 2013

@@ -129,8 +129,13 @@
 						<?php the_post_thumbnail('post-thumbnail', array('class' => 'scale-with-grid')); ?></a>
 					</div>
 					<?php endif; ?>
-					<div class="post-excerpt">
-					<?php the_excerpt() ?>
+					<div class="post-content">
+					<?php $blog_index_content = icefit_get_option('blog_index_content');
+					if ($blog_index_content == "Default Excerpt" || $blog_index_content == "Icefit Improved Excerpt") {
+						the_excerpt();
+						} else {
+						the_content();
+						} ?>
 					</div>
 					<?php the_tags('<span class="tags"><span>', '</span><span>', '</span></span>'); ?>
 
@@ -150,10 +155,10 @@
 
 			<div class="page_nav">
 				<?php if ( null != get_next_posts_link() ): ?>
-				<div class="previous"><?php next_posts_link('Previous Posts'); ?></div>
+				<div class="previous"><?php next_posts_link( __('Previous Posts', 'icefit') ); ?></div>
 				<?php endif; ?>
 				<?php if ( null != get_previous_posts_link() ): ?>
-				<div class="next"><?php previous_posts_link('Next Posts'); ?></div>
+				<div class="next"><?php previous_posts_link( __('Next Posts', 'icefit') ); ?></div>
 				<?php endif; ?>
 			</div>
 
