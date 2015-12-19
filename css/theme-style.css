@@ -307,6 +307,9 @@ h1.page-title {
     background-clip: content-box;
 }
 
+.postmetadata .fn { margin-right: 0; }
+.postmetadata .updated { display: none; }
+
 .postmetadata span a,
 .postmetadata span a:visited {
 	color: #6b5344;

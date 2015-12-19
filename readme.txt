@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.9.2
-Stable tag: 1.1.7
+Tested up to: 4.0
+Stable tag: 1.1.9
 
 == ABOUT CHOOKO LITE ==
 
@@ -38,9 +38,17 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 * hoverIntent: Copyright 2007, 2013 Brian Cherne. MIT License. http://cherne.net/brian/resources/jquery.hoverIntent.html
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 
-All other files are copyright 2013 Iceable Media.
+All other files are copyright 2013-2014 Iceable Media.
 
 == CHANGELOG ==
+
+= 1.1.9 =
+September 24th, 2014
+* Tested with WP 4.0
+* Fixed hAtom structured data (Errors like Missing required field "entry-title" / "updated" / hCard "author" in Google Webmaster tools)
+* Removed hentry class from pages (hentry is irrelevant for static content)
+* Fixed glitch in blog index: if several posts were made on the same date, the date only displayed for the first one.
+* Updated: display date according to the user-defined "date format" in Settings.
 
 = 1.1.8 =
 September 1st, 2014

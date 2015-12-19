@@ -59,10 +59,17 @@ global $header_image; ?>
 
 				<div class="postmetadata">
 					<?php if ( 'post' == get_post_type() ):  // Do not display this for pages ?>
-					<span class="meta-date"><span class="icon"></span><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
-						<?php the_date(); ?>
-					</a></span>
-					<span class="meta-author"><span class="icon"></span><?php _e('by ', 'chooko'); the_author(); ?></span>
+					<span class="meta-date published"><span class="icon"></span><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php
+						the_time(get_option('date_format'));
+					?></a></span><?php
+					// Echo updated date for hatom-feed - not to be displayed on front end
+					?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
+
+					?><span class="meta-author vcard author"><span class="icon"></span><?php
+						_e('by ', 'chooko');
+						?><span class="fn"><?php the_author(); ?></span><?php
+					?></span>
+
 					<span class="meta-category"><span class="icon"></span><?php _e('in', 'chooko'); ?> <?php the_category(', '); ?></span>
 					<?php // if (comments_open() || get_comments_number()!=0 ): ?>
 					<span class="meta-comments"><span class="icon"></span>
