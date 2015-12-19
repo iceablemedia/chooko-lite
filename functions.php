@@ -3,30 +3,21 @@
  *
  * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2014 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
  */
 
 /*
- * Set default $content_width
- */
-if ( ! isset( $content_width ) )
-	$content_width = 680;
-
-/* Adjust $content_width it depending on the page being displayed */
-function chooko_content_width() {
-	global $content_width;
-	if ( is_page_template( 'page-full-width.php' ) )
-		$content_width = 920;
-}
-add_action( 'template_redirect', 'chooko_content_width' );
-
-/*
  * Setup and registration functions
  */
 function chooko_setup(){
+
+	/* Set default $content_width */
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 680;
+
 	/* Translation support
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
@@ -62,6 +53,14 @@ function chooko_setup(){
 
 }
 add_action('after_setup_theme', 'chooko_setup');
+
+/* Adjust $content_width it depending on the page being displayed */
+function chooko_content_width() {
+	global $content_width;
+	if ( is_page_template( 'page-full-width.php' ) )
+		$content_width = 920;
+}
+add_action( 'template_redirect', 'chooko_content_width' );
 
 /*
  * Page title
