@@ -224,6 +224,12 @@ function chooko_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'chooko_excerpt_more' );
 
+function chooko_content_more( $more ) {
+	global $post;
+	return '<div class="read-more"><a href="'. get_permalink() . '#more-' . $post->ID . '">'. __("Read More", 'chooko-lite') .'</a></div>';
+}
+add_filter( 'the_content_more_link', 'chooko_content_more' );
+
 /*
  * Rewrite and replace wp_trim_excerpt() so it adds a relevant read more link
  * when the <!--more--> or <!--nextpage--> quicktags are used
