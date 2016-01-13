@@ -38,7 +38,7 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * HTML5 Shiv v3.6 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed. Source: https://github.com/aFarkas/html5shiv
 
-All other files are copyright 2013-2015 Iceable Media and released under the terms of the GNU GPLv2 License.
+All other files are copyright 2013-2016 Iceable Media and released under the terms of the GNU GPLv2 License.
 
 == TRANSLATIONS ==
 
@@ -57,6 +57,7 @@ Your translation files will be added to the next update. Don't forget to leave y
 = 1.2.3 =
 January 13th, 2016
 * Enhanced support for <!--more--> quicktag
+* Updated copyright to 2016
 * Tested with WordPress 4.4.1
 
 = 1.2.2 =

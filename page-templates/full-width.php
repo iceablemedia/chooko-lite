@@ -3,7 +3,7 @@
  *
  * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
  * Template Name: Full-width Page Template, No Sidebar
  *
