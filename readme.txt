@@ -1,7 +1,7 @@
 === CHOOKO LITE ===
 
 Contributors: Iceable
-Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: two-columns, right-sidebar, grid-layout, custom-header, custom-background, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment, food-and-drink, holiday
 Requires at least: 3.5
 Tested up to: 4.5.2
 Stable tag: 1.2.4
@@ -59,6 +59,7 @@ June 16th, 2016
 * Tested with WordPress 4.5.2
 * Updated external links to wordpress.org and iceablethemes.com to https
 * Removed php closing tags from end of files to prevent potential issues
+* Updated theme tags for WordPress.org
 
 = 1.2.3 =
 January 13th, 2016
