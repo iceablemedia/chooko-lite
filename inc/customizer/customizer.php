@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -198,7 +198,7 @@ class Chooko_Customizer {
 
 		// Setting and control for Chooko upgrade message
 		$wp_customize->add_setting( 'chooko_upgrade', array(
-			'default'	=> 'http://www.iceablethemes.com/shop/chooko-pro/',
+			'default'	=> 'https://www.iceablethemes.com/shop/chooko-pro/',
 			'sanitize_callback' => 'chooko_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -215,7 +215,7 @@ class Chooko_Customizer {
 
 		// Setting and control for Chooko support forums message
 		$wp_customize->add_setting( 'chooko_support', array(
-			'default'	=> 'http://www.iceablethemes.com/forums/forum/free-support-forum/chooko-lite/',
+			'default'	=> 'https://www.iceablethemes.com/forums/forum/free-support-forum/chooko-lite/',
 			'sanitize_callback' => 'chooko_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -232,7 +232,7 @@ class Chooko_Customizer {
 
 		// Setting and control for Chooko feedback message
 		$wp_customize->add_setting( 'chooko_feedback', array(
-			'default'	=> 'http://wordpress.org/support/view/theme-reviews/chooko-lite',
+			'default'	=> 'https://wordpress.org/support/view/theme-reviews/chooko-lite',
 			'sanitize_callback' => 'chooko_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -310,5 +310,3 @@ function chooko_sanitize_on_off( $input ){
 function chooko_sanitize_button( $input ){
 	return '';
 }
-
-?>

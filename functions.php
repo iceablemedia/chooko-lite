@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -333,5 +333,3 @@ function chooko_adjacent_image_link($prev = true) {
  */
 
 require_once 'inc/customizer/customizer.php';
-
-?>

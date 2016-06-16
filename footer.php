@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -24,13 +24,13 @@
 			printf( __('Copyright &copy; %s %s.', 'chooko-lite'), date('Y'), get_bloginfo('name') );
 			echo ' ';
 			printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'chooko-lite'),
-				esc_url( __('http://wordpress.org/', 'chooko-lite') ),
+				esc_url( __('https://wordpress.org/', 'chooko-lite') ),
 				esc_attr__( 'Semantic Personal Publishing Platform', 'chooko-lite' ),
 				__('WordPress', 'chooko-lite')
 			);
 			echo ' ';
 			printf( __('Chooko design by <a href="%s" title="%s">Iceable Themes</a>.', 'chooko-lite'),
-				esc_url( 'http://www.iceablethemes.com' ),
+				esc_url( 'https://www.iceablethemes.com' ),
 				esc_attr( 'Iceablethemes', 'chooko-lite' )
 			);
 
