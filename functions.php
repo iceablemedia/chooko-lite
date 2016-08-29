@@ -66,16 +66,6 @@ function chooko_content_width() {
 add_action( 'template_redirect', 'chooko_content_width' );
 
 /*
- * Page title (for WordPress < 4.1 )
- */
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-	function chooko_render_title() {
-		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
-	}
-	add_action( 'wp_head', 'chooko_render_title' );
-endif;
-
-/*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
  */
 function chooko_page_menu_args( $args ) {
@@ -237,7 +227,7 @@ add_filter( 'the_content_more_link', 'chooko_content_more' );
  */
 function chooko_trim_excerpt($text = '') {
 	global $post;
-	$raw_excerpt = $text;
+	$raw_excerpt = $text;blackoot
 	if ( '' == $text ) {
 		$text = get_the_content('');
 		$text = strip_shortcodes( $text );
