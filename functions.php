@@ -227,7 +227,7 @@ add_filter( 'the_content_more_link', 'chooko_content_more' );
  */
 function chooko_trim_excerpt($text = '') {
 	global $post;
-	$raw_excerpt = $text;blackoot
+	$raw_excerpt = $text;
 	if ( '' == $text ) {
 		$text = get_the_content('');
 		$text = strip_shortcodes( $text );

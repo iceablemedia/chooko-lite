@@ -54,6 +54,10 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 == CHANGELOG ==
 
+= 1.2.6 =
+August 29th, 2016
+* Fixed typo that slipped through the last update
+
 = 1.2.5 =
 August 29th, 2016
 * Removed function chooko_render_title() used as a fallback for title tag support
