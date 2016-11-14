@@ -1119,20 +1119,16 @@ p.comment-form-url
 
 /* Searchform */
 
-#searchform {
+.search-form {
 	margin: 15px 0;
 	position: relative;
 }
 
-#searchform #s {
+.search-form .search-field {
 	width: 160px;
 }
 
-#searchform label {
-	display: none;
-}
-
-#searchform #searchsubmit {
+.search-form .search-submit {
 	height: 30px;
 	width: 30px;
 	margin: 0;
@@ -1146,6 +1142,21 @@ p.comment-form-url
 	color: #333;
 	background-color: #6b5344;
 	background-image: url('../img/search-icon.png');
+}
+
+.search-form .search-field::-webkit-input-placeholder { color: #fff; }
+.search-form .search-field::-moz-placeholder { color: #fff; }
+.search-form .search-field:-ms-input-placeholder { color: #fff; }
+.search-form .search-field:-moz-placeholder { color: #fff; }
+
+.search-form .search-field:focus::-webkit-input-placeholder { color: transparent }
+.search-form .search-field:focus::-moz-placeholder { color: transparent; }
+.search-form .search-field:focus:-ms-input-placeholder { color: transparent; }
+.search-form .search-field:focus:-moz-placeholder { color: transparent; }
+
+#sidebar .search-form,
+#footer .search-form {
+    padding-top: 0;
 }
 
 /* RSS Widget */
@@ -1178,7 +1189,7 @@ p.comment-form-url
 }
 
 /* Search */
-#searchform div {
+#searchform label {
 	position: relative;
 }
 
@@ -1200,10 +1211,12 @@ p.comment-form-url
 }
 
 #sidebar input[type="text"],
+#sidebar input[type="search"],
 #sidebar input[type="password"],
 #sidebar input[type="email"],
 #sidebar textarea,
 #footer input[type="text"],
+#footer input[type="search"],
 #footer input[type="password"],
 #footer input[type="email"],
 #footer textarea {
@@ -1674,6 +1687,7 @@ label {
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea {
@@ -1693,6 +1707,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -1700,9 +1715,11 @@ textarea:focus {
 	color: #fff;
 	border: none;
 	box-shadow: none;
+	outline: none;
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"] {
 	height: 30px;
@@ -1915,20 +1932,14 @@ or wrap each row of columns in a <div class="row"> */
 	#navbar > .menu-container {
 		width: 768px;
 	}
-	#nav-search {
-		width: 150px;
-	}
-	#nav-search #s {
-		width: 112px;
-	}
-	#searchform #searchsubmit {
+	.search-form .search-submit {
 		left: 122px;
 	}
-	#searchform #s {
+	.search-form .search-field {
 		width: 131px;
 	}
-	#sidebar #searchform #s {
-		width: 117px;
+	#sidebar .search-form .search-field {
+		width: 122px;
 	}
 	#calendar_wrap td {
 		padding: 1px 3px;
@@ -2028,13 +2039,10 @@ or wrap each row of columns in a <div class="row"> */
 	#navbar > .menu-container {
 		width: 300px;
 	}
-	#nav-search {
-		display: none;
+	#sidebar .search-form .search-field {
+		width: 255px;
 	}
-	#sidebar #searchform #s {
-		width: 245px;
-	}
-	#sidebar #searchform #searchsubmit {
+	#sidebar .search-form .search-submit {
 		left: 255px;
 	}
 	#calendar_wrap td {
@@ -2132,10 +2140,10 @@ or wrap each row of columns in a <div class="row"> */
 	#navbar > .menu-container {
 		width: 420px;
 	}
-	#sidebar #searchform #s {
-		width: 360px;
+	#sidebar .search-form .search-field {
+		width: 370px;
 	}
-	#sidebar #searchform #searchsubmit {
+	#sidebar .search-form .search-submit {
 		left: 370px;
 	}
 	#calendar_wrap td {

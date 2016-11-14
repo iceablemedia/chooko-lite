@@ -2,9 +2,9 @@
 
 Contributors: Iceable
 Tags: two-columns, right-sidebar, grid-layout, custom-header, custom-background, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment, food-and-drink, holiday
-Requires at least: 3.5
-Tested up to: 4.5.2
-Stable tag: 1.2.4
+Requires at least: 4.1
+Tested up to: 4.6.1
+Stable tag: 1.2.7
 
 == ABOUT CHOOKO LITE ==
 
@@ -53,6 +53,10 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.7 =
+November 14th, 2016
+* Updated searchforms to HTML5 markup
 
 = 1.2.6 =
 August 29th, 2016
