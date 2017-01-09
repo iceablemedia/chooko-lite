@@ -38,7 +38,7 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * HTML5 Shiv v3.6 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed. Source: https://github.com/aFarkas/html5shiv
 
-All other files are copyright 2013-2016 Iceable Media and released under the terms of the GNU GPLv2 License.
+All other files are copyright 2013-2017 Iceable Media and released under the terms of the GNU GPLv2 License.
 
 == TRANSLATIONS ==
 
@@ -53,6 +53,10 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.9 =
+January 9th, 2017
+* Updated copyright to 2017
 
 = 1.2.8 =
 December 12th, 2016
