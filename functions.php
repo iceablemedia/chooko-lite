@@ -220,8 +220,8 @@ add_filter('post_class','chooko_remove_hentry');
  */
 function chooko_remove_rel_cat( $text ) {
 	$text = str_replace(' rel="category"', "", $text);
-	$text = str_replace(' rel="category tag"', "", $text);
-	return $text;
+  $text = str_replace(' rel="category tag"', ' rel="tag"', $text);
+  return $text;
 }
 add_filter( 'the_category', 'chooko_remove_rel_cat' );
 

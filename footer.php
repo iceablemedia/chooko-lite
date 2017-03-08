@@ -19,8 +19,9 @@
 	?><div id="sub-footer"><div class="container"><?php
 		?><div class="sub-footer-left"><p><?php
 
-/* You are free to modify or replace this by anything you like as per the terms of the GPL license */
+/* You are free to modify or replace this by anything you like as per the terms of the GPL license */ ?>
 
+<?php
 			printf( __('Copyright &copy; %s %s.', 'chooko-lite'), date('Y'), get_bloginfo('name') );
 			echo ' ';
 			printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'chooko-lite'),
@@ -33,8 +34,9 @@
 				esc_url( 'https://www.iceablethemes.com' ),
 				esc_attr( 'Iceablethemes', 'chooko-lite' )
 			);
+?>
 
-/* Stop editing here */
+<?php /* Stop editing here */
 			?></p></div><?php
 
 		?><div class="sub-footer-right"><?php
