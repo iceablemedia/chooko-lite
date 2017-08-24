@@ -12,12 +12,12 @@
 /*
  * Theme constants
  */
-define( "THEME_DIR", get_template_directory() );
-define( "THEME_DIR_URI", get_template_directory_uri() );
-define( "STYLESHEET_DIR", get_stylesheet_directory() );
-define( "STYLESHEET_DIR_URI", get_stylesheet_directory_uri() );
-$the_theme = wp_get_theme();
-define( "THEME_VERSION", $the_theme->get( 'Version' ) );
+define( "CHOOKO_THEME_DIR", get_template_directory() );
+define( "CHOOKO_THEME_DIR_URI", get_template_directory_uri() );
+define( "CHOOKO_STYLESHEET_DIR", get_stylesheet_directory() );
+define( "CHOOKO_STYLESHEET_DIR_URI", get_stylesheet_directory_uri() );
+$chooko_the_theme = wp_get_theme();
+define( "CHOOKO_THEME_VERSION", $chooko_the_theme->get( 'Version' ) );
 
 /*
  * Setup and registration functions
@@ -32,7 +32,7 @@ function chooko_setup(){
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
 	 */
-	load_theme_textdomain('chooko-lite', THEME_DIR . '/languages');
+	load_theme_textdomain('chooko-lite', CHOOKO_THEME_DIR . '/languages');
 
 	/* Feed links support */
 	add_theme_support( 'automatic-feed-links' );
@@ -60,7 +60,7 @@ function chooko_setup(){
 	/* Custom background support */
 	add_theme_support( 'custom-background',
 						array(	'default-color' => 'f5f2f0',
-								'default-image' => THEME_DIR_URI . '/img/ricepaper2.png',
+								'default-image' => CHOOKO_THEME_DIR_URI . '/img/ricepaper2.png',
 								)
 					);
 
@@ -157,10 +157,10 @@ function chooko_styles() {
 		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
 		 * or the parent theme's version otherwise
 		 */
-		wp_register_style( 'chooko', get_theme_file_uri( $stylesheet ), array(), THEME_VERSION );
+		wp_register_style( 'chooko', get_theme_file_uri( $stylesheet ), array(), CHOOKO_THEME_VERSION );
 
 		// Enqueue style.css from the current theme
-		wp_register_style( 'chooko-style', get_theme_file_uri( '/style.css' ), array(), THEME_VERSION );
+		wp_register_style( 'chooko-style', get_theme_file_uri( '/style.css' ), array(), CHOOKO_THEME_VERSION );
 
 	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
 
@@ -168,13 +168,13 @@ function chooko_styles() {
 		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
 		 * or the parent theme's version otherwise
 		 */
-		if ( @file_exists( STYLESHEET_DIR . $stylesheet ) )
-			wp_register_style( 'chooko', STYLESHEET_DIR_URI . $stylesheet, array(), THEME_VERSION );
+		if ( @file_exists( CHOOKO_STYLESHEET_DIR . $stylesheet ) )
+			wp_register_style( 'chooko', CHOOKO_STYLESHEET_DIR_URI . $stylesheet, array(), CHOOKO_THEME_VERSION );
 		else
-			wp_register_style( 'chooko', THEME_DIR_URI . $stylesheet, array(), THEME_VERSION );
+			wp_register_style( 'chooko', CHOOKO_THEME_DIR_URI . $stylesheet, array(), CHOOKO_THEME_VERSION );
 
 		// Always enqueue style.css from the current theme
-		wp_register_style( 'chooko-style', STYLESHEET_DIR_URI . '/style.css', array(), THEME_VERSION );
+		wp_register_style( 'chooko-style', CHOOKO_STYLESHEET_DIR_URI . '/style.css', array(), CHOOKO_THEME_VERSION );
 
 	endif;
 
@@ -182,7 +182,7 @@ function chooko_styles() {
 	wp_enqueue_style( 'chooko-style' );
 
 	// Google Webfonts
-	wp_enqueue_style( 'PTSans-webfonts', "//fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700&subset=latin,latin-ext", array(), null );
+	wp_enqueue_style( 'chooko-ptsans', "//fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700&subset=latin,latin-ext", array(), null );
 }
 add_action('wp_enqueue_scripts', 'chooko_styles');
 
@@ -200,17 +200,17 @@ add_action( 'init', 'chooko_editor_styles' );
 function chooko_scripts() {
 
 	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
-		wp_enqueue_script('chooko', get_theme_file_uri( '/js/chooko.min.js' ), array('jquery','hoverIntent'), THEME_VERSION );
+		wp_enqueue_script('chooko', get_theme_file_uri( '/js/chooko.min.js' ), array('jquery','hoverIntent'), CHOOKO_THEME_VERSION );
 		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
-    wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), THEME_VERSION );
+    wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), CHOOKO_THEME_VERSION );
 	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
-		wp_enqueue_script('chooko', THEME_DIR_URI . '/js/chooko.min.js', array('jquery','hoverIntent'), THEME_VERSION );
+		wp_enqueue_script('chooko', CHOOKO_THEME_DIR_URI . '/js/chooko.min.js', array('jquery','hoverIntent'), CHOOKO_THEME_VERSION );
 		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
-    wp_enqueue_script( 'html5shiv', THEME_DIR_URI . '/js/html5.js', array(), THEME_VERSION );
+    wp_enqueue_script( 'html5shiv', CHOOKO_THEME_DIR_URI . '/js/html5.js', array(), CHOOKO_THEME_VERSION );
 	endif;
 
 	// Add conditional for HTML5Shiv to only load for IE < 9
-  wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' ); 
+  wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
   /* Threaded comments support */
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )

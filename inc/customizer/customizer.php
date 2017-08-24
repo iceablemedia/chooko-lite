@@ -227,13 +227,13 @@ class Chooko_Customizer {
 	public static function customize_controls_scripts(){
 		wp_enqueue_style(
 			'chooko-customizer-controls-style',
-			THEME_DIR_URI . '/inc/customizer/css/customizer-controls.css',
+			CHOOKO_THEME_DIR_URI . '/inc/customizer/css/customizer-controls.css',
 			array( 'customize-controls' )
 		);
 
 		wp_register_script(
 			  'chooko-customizer-section',
-			  THEME_DIR_URI . '/inc/customizer/js/chooko-customizer-section.js',
+			  CHOOKO_THEME_DIR_URI . '/inc/customizer/js/chooko-customizer-section.js',
 			  array( 'jquery','jquery-ui-core','jquery-ui-button','customize-controls' ),
 			  '',
 			  true

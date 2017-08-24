@@ -58,6 +58,7 @@ Your translation files will be added to the next update. Don't forget to leave y
 August 24th, 2017
 * Enhanced: Wrapped pingback url in appropriate conditionals in header.php
 * Enhanced: HTML5Shiv is now properly enqueued
+* Enhanced: Prefixed constants names and Google font enqueuing handle
 
 = 1.2.12 =
 June 21th, 2017
