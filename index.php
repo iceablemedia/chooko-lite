@@ -19,26 +19,10 @@ global $header_image;
 	?><h1 class="page-title"><?php _e('Search Results for ', 'chooko-lite'); ?>"<?php the_search_query() ?>"</h1><?php
 	endif;
 
-	/* TAG CONDITIONAL TITLE */
-	if ( is_tag() ):
-	?><h1 class="page-title"><?php _e('Tag: ', 'chooko-lite'); single_tag_title(); ?></h1><?php
-	endif;
-
-	/* CATEGORY CONDITIONAL TITLE */
-	if ( is_category() ):
-	?><h1 class="page-title"><?php _e('Category: ', 'chooko-lite'); single_cat_title(); ?></h1><?php
-	endif;
-
-	/* ARCHIVES CONDITIONAL TITLE */
-	if ( is_day() ):
-	?><h1 class="page-title"><?php _e('Daily archives: ', 'chooko-lite'); echo get_the_time('F jS, Y'); ?></h1><?php
-	endif;
-	if ( is_month() ):
-	?><h1 class="page-title"><?php _e('Monthly archives: ', 'chooko-lite'); echo get_the_time('F, Y'); ?></h1><?php
-	endif;
-	if ( is_year() ):
-	?><h1 class="page-title"><?php _e('Yearly archives: ', 'chooko-lite'); echo get_the_time('Y'); ?></h1><?php
-	endif;
+	/* ARCHIVE CONDITIONAL TITLE */
+  if ( is_archive() ):
+		?><h1 class="page-title"><?php the_archive_title(); ?></h1><?php
+  endif;
 
 	/* DEFAULT CONDITIONAL TITLE */
 	if (!is_front_page() && !is_search() && !is_tag() && !is_category() && !is_year() && !is_month() && !is_day() ):
