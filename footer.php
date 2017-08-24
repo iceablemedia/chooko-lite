@@ -22,15 +22,15 @@
 /* You are free to modify or replace this by anything you like as per the terms of the GPL license */ ?>
 
 <?php
-			printf( __('Copyright &copy; %s %s.', 'chooko-lite'), date('Y'), get_bloginfo('name') );
+			printf( __('Copyright &copy; %1$s %2$s.', 'chooko-lite'), date('Y'), get_bloginfo('name') );
 			echo ' ';
-			printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'chooko-lite'),
+			printf( __('Proudly powered by <a href="%1$s" title="%2$s">%3$s</a>.', 'chooko-lite'),
 				esc_url( __('https://wordpress.org/', 'chooko-lite') ),
 				esc_attr__( 'Semantic Personal Publishing Platform', 'chooko-lite' ),
 				__('WordPress', 'chooko-lite')
 			);
 			echo ' ';
-			printf( __('Chooko design by <a href="%s" title="%s">Iceable Themes</a>.', 'chooko-lite'),
+			printf( __('Chooko design by <a href="%1$s" title="%2$s">Iceable Themes</a>.', 'chooko-lite'),
 				esc_url( 'https://www.iceablethemes.com' ),
 				esc_attr( 'Iceablethemes', 'chooko-lite' )
 			);
