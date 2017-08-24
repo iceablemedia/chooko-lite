@@ -152,31 +152,14 @@ function chooko_styles() {
 		$stylesheet = '/css/chooko-unresponsive.min.css';
 	endif;
 
-	if ( function_exists( 'get_theme_file_uri' ) ): // WordPress 4.7
-		/* Child theme support:
-		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
-		 * or the parent theme's version otherwise
-		 */
-		wp_register_style( 'chooko', get_theme_file_uri( $stylesheet ), array(), CHOOKO_THEME_VERSION );
+	/* Child theme support:
+	 * Enqueue child-theme's versions of stylesheet in /css if they exist,
+	 * or the parent theme's version otherwise
+	 */
+	wp_register_style( 'chooko', get_theme_file_uri( $stylesheet ), array(), CHOOKO_THEME_VERSION );
 
-		// Enqueue style.css from the current theme
-		wp_register_style( 'chooko-style', get_theme_file_uri( '/style.css' ), array(), CHOOKO_THEME_VERSION );
-
-	else: // Support for WordPress <4.7 (to be removed after 4.9 is released)
-
-		/* Child theme support:
-		 * Enqueue child-theme's versions of stylesheet in /css if they exist,
-		 * or the parent theme's version otherwise
-		 */
-		if ( @file_exists( CHOOKO_STYLESHEET_DIR . $stylesheet ) )
-			wp_register_style( 'chooko', CHOOKO_STYLESHEET_DIR_URI . $stylesheet, array(), CHOOKO_THEME_VERSION );
-		else
-			wp_register_style( 'chooko', CHOOKO_THEME_DIR_URI . $stylesheet, array(), CHOOKO_THEME_VERSION );
-
-		// Always enqueue style.css from the current theme
-		wp_register_style( 'chooko-style', CHOOKO_STYLESHEET_DIR_URI . '/style.css', array(), CHOOKO_THEME_VERSION );
-
-	endif;
+	// Enqueue style.css from the current theme
+	wp_register_style( 'chooko-style', get_theme_file_uri( '/style.css' ), array(), CHOOKO_THEME_VERSION );
 
 	wp_enqueue_style( 'chooko' );
 	wp_enqueue_style( 'chooko-style' );
