@@ -54,6 +54,10 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 == CHANGELOG ==
 
+= 1.2.13 =
+August 24th, 2017
+* Enhanced: Wrapped pingback url in appropriate conditionals in header.php
+
 = 1.2.12 =
 June 21th, 2017
 * Removed function_exists('wp_site_icon') checks and related functions (deprecated since WP 4.3)
