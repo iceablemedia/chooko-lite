@@ -2,16 +2,10 @@
  * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
  * Javascripts
+ *
+ * Dependencies:
+ * - Superfish
  */
-
-/* Index *
-==================================================
- * 1. Chooko's own scripts + plugins init
- * 2. Superfish
- */
-
-/* 1. Chooko's own scripts + plugins init
-================================================== */
 
 /* --- (document).ready function wrap --- */
 
@@ -35,14 +29,14 @@ jQuery(document).ready(function($){
 	});
 
 	/* Remove empty comment reply link wrappers */
-	$('div.reply').filter(function() {return $.trim($(this).text()) === ''}).remove()
+	$('div.reply').filter( function() {
+		return $.trim($(this).text()) === '';
+	}).remove();
 
 	/*--- End of $(document).ready(function() ---*/
 
 });
 
-/* 2. Superfish
-================================================== */
 
 /*
  * Superfish v1.4.8 - jQuery menu widget

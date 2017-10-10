@@ -1,340 +1,352 @@
+# Copyright (C) 2017 Iceable Media
+# This file is distributed under the GNU General Public License v2 (GPLv2).
 msgid ""
 msgstr ""
-"Project-Id-Version: Chooko Lite 1.2\n"
-"POT-Creation-Date: 2015-07-21 15:32+0100\n"
-"PO-Revision-Date: 2015-07-21 15:32+0100\n"
-"Last-Translator: \n"
-"Language-Team: Iceable Themes\n"
-"Language: en_US\n"
+"Project-Id-Version: Chooko Lite 1.2.14\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2017-10-10 13:07:53+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: __;_e;_n;_x\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: ..\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
 
-#: ../404.php:16
-msgid "404"
-msgstr ""
-
-#: ../404.php:20
-msgid "Page Not Found"
-msgstr ""
-
-#: ../404.php:21 ../index.php:118 ../page.php:54 ../single.php:132
-#: ../page-templates/full-width.php:56
-msgid "What you are looking for isn't here..."
-msgstr ""
-
-#: ../404.php:22
-msgid "Maybe a search will help ?"
-msgstr ""
-
-#: ../comments.php:14
-msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
-
-#: ../comments.php:20
-#, php-format
-msgid "One Response to %2$s"
-msgstr ""
-
-#: ../comments.php:30
-msgid "Older comments"
-msgstr ""
-
-#: ../comments.php:33
-msgid "Newer comments"
-msgstr ""
-
-#: ../comments.php:42
-msgid "Comments are closed."
-msgstr ""
-
-#: ../footer.php:24
-#, php-format
-msgid "Copyright &copy; %s %s."
-msgstr ""
-
-#: ../footer.php:26
-#, php-format
-msgid "Proudly powered by <a href=\"%s\" title=\"%s\">%s</a>."
-msgstr ""
-
-#: ../footer.php:27
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: ../footer.php:29
-msgid "WordPress"
-msgstr ""
-
-#: ../footer.php:32
-#, php-format
-msgid "Chooko design by <a href=\"%s\" title=\"%s\">Iceable Themes</a>."
-msgstr ""
-
-#: ../functions.php:113
-msgid "Default Sidebar"
-msgstr ""
-
-#: ../functions.php:125
-msgid "Footer"
-msgstr ""
-
-#: ../functions.php:223
-msgid "Read More"
-msgstr ""
-
-#: ../index.php:19
-msgid "Search Results for "
-msgstr ""
-
-#: ../index.php:24
-msgid "Tag: "
-msgstr ""
-
-#: ../index.php:29
-msgid "Category: "
-msgstr ""
-
-#: ../index.php:34
-msgid "Daily archives: "
-msgstr ""
-
-#: ../index.php:37
-msgid "Monthly archives: "
-msgstr ""
-
-#: ../index.php:40
-msgid "Yearly archives: "
-msgstr ""
-
-#: ../index.php:68 ../single.php:34
-msgid "by "
-msgstr ""
-
-#: ../index.php:72 ../single.php:37
-msgid "in"
-msgstr ""
-
-#: ../index.php:75
-msgid "No Comment"
-msgstr ""
-
-#: ../index.php:75
-msgid "1 Comment"
-msgstr ""
-
-#: ../index.php:75
-msgid "% Comments"
-msgstr ""
-
-#: ../index.php:75 ../single.php:43
-msgid "Comments Off"
-msgstr ""
-
-#: ../index.php:80 ../page.php:38 ../single.php:47
-#: ../page-templates/full-width.php:39
-msgid "Edit"
-msgstr ""
-
-#: ../index.php:110 ../index.php:117 ../page.php:53 ../single.php:131
-#: ../page-templates/full-width.php:55
-msgid "Not Found"
-msgstr ""
-
-#: ../index.php:111
-#, php-format
-msgid "Your search for \"%s\" did not return any result."
-msgstr ""
-
-#: ../index.php:112
-msgid "Would you like to try another search ?"
-msgstr ""
-
-#: ../index.php:126
-msgid "Previous Posts"
-msgstr ""
-
-#: ../index.php:130
-msgid "Next Posts"
-msgstr ""
-
-#: ../page.php:26 ../page-templates/full-width.php:26
-msgid "Pages:"
-msgstr ""
-
-#: ../page.php:31 ../single.php:69 ../page-templates/full-width.php:31
-msgid "Next page"
-msgstr ""
-
-#: ../page.php:32 ../single.php:70 ../page-templates/full-width.php:32
-msgid "Previous page"
-msgstr ""
-
-#: ../sidebar.php:16
-msgid "Recent Posts"
-msgstr ""
-
-#: ../sidebar.php:21
-msgid "Archives"
-msgstr ""
-
-#: ../sidebar.php:26
-msgid "Meta"
-msgstr ""
-
-#: ../single.php:42
-msgid "No"
-msgstr ""
-
-#: ../single.php:42
+#: single.php:63
 msgid "1"
 msgstr ""
 
-#: ../single.php:42
-msgid "%"
+#: 404.php:16
+msgid "404"
 msgstr ""
 
-#: ../single.php:43
-msgid "Comment"
+#: 404.php:19
+msgid "Page Not Found"
 msgstr ""
 
-#: ../single.php:43
-msgid "Comments"
+#: 404.php:20 index.php:183 page-templates/full-width.php:73 page.php:72
+#: single.php:208
+msgid "What you are looking for isn't here..."
 msgstr ""
 
-#: ../single.php:64
-msgid "Pages"
+#: 404.php:21
+msgid "Maybe a search will help ?"
 msgstr ""
 
-#: ../single.php:87
-msgid "Previous Image"
+#: comments.php:15
+msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: ../single.php:91
-msgid "Next Image"
+#: comments.php:26
+#. Translators: %1$s is the number of comments, %2$s is the post title
+msgid "%1$s Response to %2$s"
+msgid_plural "%1$s Responses to %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:51
+msgid "Older comments"
 msgstr ""
 
-#: ../single.php:97 ../single.php:117
-msgid "Previous Post"
+#: comments.php:57
+msgid "Newer comments"
 msgstr ""
 
-#: ../single.php:100 ../single.php:120
-msgid "Next Post"
+#: comments.php:70
+msgid "Comments are closed."
 msgstr ""
 
-#: ../inc/customizer/customizer.php:18
+#: footer.php:37
+#. Translators: %1$s is the copyright date, %2$s is the site name (e.g.
+#. Copyright © 2017, My Website)
+msgid "Copyright &copy; %1$s %2$s."
+msgstr ""
+
+#: footer.php:44
+#. Translators: "Powered by" link to WordPress.org. %1$s is the localized
+#. wordpress.org url (e.g. https:en.wordpress.org), %2$s is title attribute for
+#. the link ("Semantic Personal Publishing Platform"), %3$s is the anchor
+#. ("WordPress")
+msgid "Proudly powered by <a href=\"%1$s\" title=\"%2$s\">%3$s</a>."
+msgstr ""
+
+#: footer.php:45
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:46
+msgid "Semantic Personal Publishing Platform"
+msgstr ""
+
+#: footer.php:47
+msgid "WordPress"
+msgstr ""
+
+#: footer.php:52
+#. Translators: %s is a link to the author's website with the name "Iceable
+#. Themes" as anchor
+msgid "Chooko design by %s"
+msgstr ""
+
+#: functions.php:131
+msgid "Default Sidebar"
+msgstr ""
+
+#: functions.php:144
+msgid "Footer"
+msgstr ""
+
+#: functions.php:253 functions.php:259
+msgid "Read More"
+msgstr ""
+
+#: inc/customizer/customizer.php:18
 msgid "Background"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:22
-msgid "Logo & Favicon"
+#: inc/customizer/customizer.php:24
+msgid "Logo"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:27
+#: inc/customizer/customizer.php:32
 msgid "Blog Settings"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:32
+#: inc/customizer/customizer.php:40
 msgid "Misc"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:37
+#: inc/customizer/customizer.php:48
 msgid "More"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:49
+#: inc/customizer/customizer.php:66
 msgid "Upload your logo"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:50
+#: inc/customizer/customizer.php:67
 msgid "If no logo is uploaded, the site title will be displayed instead."
 msgstr ""
 
-#: ../inc/customizer/customizer.php:65
-msgid "Upload a custom favicon"
-msgstr ""
-
-#: ../inc/customizer/customizer.php:66
-msgid ""
-"Set your favicon. 16x16 or 32x32 pixels is recommended. PNG (recommended), "
-"GIF, or ICO."
-msgstr ""
-
-#: ../inc/customizer/customizer.php:81
+#: inc/customizer/customizer.php:88
 msgid "Blog Index Content"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:86
+#: inc/customizer/customizer.php:93
 msgid "Excerpt"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:87
+#: inc/customizer/customizer.php:94
 msgid "Full content"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:101
+#: inc/customizer/customizer.php:111
 msgid "Responsive Mode"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:106 ../inc/customizer/customizer.php:126
-#: ../inc/customizer/customizer.php:145 ../inc/customizer/customizer.php:164
-#: ../inc/customizer/customizer.php:183
+#: inc/customizer/customizer.php:116 inc/customizer/customizer.php:139
+#: inc/customizer/customizer.php:161 inc/customizer/customizer.php:183
+#: inc/customizer/customizer.php:205
 msgid "On"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:107 ../inc/customizer/customizer.php:127
-#: ../inc/customizer/customizer.php:146 ../inc/customizer/customizer.php:165
-#: ../inc/customizer/customizer.php:184
+#: inc/customizer/customizer.php:117 inc/customizer/customizer.php:140
+#: inc/customizer/customizer.php:162 inc/customizer/customizer.php:184
+#: inc/customizer/customizer.php:206
 msgid "Off"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:121
+#: inc/customizer/customizer.php:134
 msgid "Display header on Homepage"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:140
+#: inc/customizer/customizer.php:156
 msgid "Display header on Blog Index"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:159
+#: inc/customizer/customizer.php:178
 msgid "Display header on Single Posts"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:178
+#: inc/customizer/customizer.php:200
 msgid "Display header on Pages"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:198
+#: inc/customizer/customizer.php:226
 msgid "Get Chooko Pro"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:199
+#: inc/customizer/customizer.php:227
 msgid ""
 "Unleash the full potential of Chooko with tons of additional settings, "
 "advanced features and premium support."
 msgstr ""
 
-#: ../inc/customizer/customizer.php:215
+#: inc/customizer/customizer.php:249
 msgid "Chooko Lite support forums"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:216
+#: inc/customizer/customizer.php:250
 msgid "Have a question? Need help?"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:232
+#: inc/customizer/customizer.php:272
 msgid "Rate Chooko Lite"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:233
+#: inc/customizer/customizer.php:273
 msgid "Like this theme? We'd love to hear your feedback!"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:258
+#: inc/customizer/customizer.php:299
 msgid "Upgrade to Chooko Pro!"
+msgstr ""
+
+#: index.php:25
+#. Translators: %s is the search term.
+msgid "Search Results for \"%s\""
+msgstr ""
+
+#: index.php:75 single.php:44
+#. Translators: %s is the author's name
+msgid "by %s"
+msgstr ""
+
+#: index.php:81 single.php:53
+msgid "in"
+msgstr ""
+
+#: index.php:89
+msgid "No Comment"
+msgstr ""
+
+#: index.php:90
+msgid "1 Comment"
+msgstr ""
+
+#: index.php:91
+msgid "% Comments"
+msgstr ""
+
+#: index.php:93 single.php:74
+msgid "Comments Off"
+msgstr ""
+
+#: index.php:104 page-templates/full-width.php:47 page.php:46 single.php:82
+msgid "Edit"
+msgstr ""
+
+#: index.php:164 index.php:182 page-templates/full-width.php:72 page.php:71
+#: single.php:207
+msgid "Not Found"
+msgstr ""
+
+#: index.php:169
+#. Translators: %s is the search term
+msgid "Your search for \"%s\" did not return any result."
+msgstr ""
+
+#: index.php:174
+msgid "Would you like to try another search ?"
+msgstr ""
+
+#: index.php:195
+msgid "Previous Posts"
+msgstr ""
+
+#: index.php:201
+msgid "Next Posts"
+msgstr ""
+
+#: page-templates/full-width.php:30 page.php:29
+msgid "Pages:"
+msgstr ""
+
+#: page-templates/full-width.php:35 page.php:34 single.php:123
+msgid "Next page"
+msgstr ""
+
+#: page-templates/full-width.php:36 page.php:35 single.php:124
+msgid "Previous page"
+msgstr ""
+
+#: sidebar.php:18
+msgid "Recent Posts"
+msgstr ""
+
+#: sidebar.php:23
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:28
+msgid "Meta"
+msgstr ""
+
+#: single.php:62
+msgid "No"
+msgstr ""
+
+#: single.php:64
+msgid "%"
+msgstr ""
+
+#: single.php:70 single.php:71
+msgid "Comment"
+msgstr ""
+
+#: single.php:72
+msgid "Comments"
+msgstr ""
+
+#: single.php:118
+msgid "Pages"
+msgstr ""
+
+#: single.php:143
+msgid "Previous Image"
+msgstr ""
+
+#: single.php:149
+msgid "Next Image"
+msgstr ""
+
+#: single.php:157 single.php:186
+msgid "Previous Post"
+msgstr ""
+
+#: single.php:163 single.php:192
+msgid "Next Post"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Chooko Lite"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://www.iceablethemes.com/shop/chooko-lite/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A sweet, colorful and responsive WordPress Theme. Perfect for personal, "
+"fashion, beauty or cooking oriented blogs and creative websites. It "
+"features two widgetizable areas in the sidebar and the optional footer, two "
+"custom menu locations in the navbar and footer, optional tagline display, "
+"custom logo and favicon, custom header image and custom background. Chooko "
+"Lite is also translation ready for non-English sites, a .pot file is "
+"included to get started quickly, and a French (fr_FR) translation is "
+"already included."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Iceable Media"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.iceablethemes.com"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full-width Page Template, No Sidebar"
 msgstr ""
