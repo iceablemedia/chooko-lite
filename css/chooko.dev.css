@@ -990,6 +990,10 @@ h3.entry-title {
 	background-image: none;
 }
 
+#page-container .comments .comment {
+	list-style: none;
+}
+
 .commentlist {
 	list-style: none;
 	margin-left: 0;

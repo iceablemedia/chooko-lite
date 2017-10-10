@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chooko Lite 1.2.14\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-10-10 13:07:53+00:00\n"
+"POT-Creation-Date: 2017-10-10 13:41:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,10 +12,6 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
-
-#: single.php:63
-msgid "1"
-msgstr ""
 
 #: 404.php:16
 msgid "404"
@@ -25,8 +21,8 @@ msgstr ""
 msgid "Page Not Found"
 msgstr ""
 
-#: 404.php:20 index.php:183 page-templates/full-width.php:73 page.php:72
-#: single.php:208
+#: 404.php:20 index.php:181 page-templates/full-width.php:73 page.php:72
+#: single.php:200
 msgid "What you are looking for isn't here..."
 msgstr ""
 
@@ -208,54 +204,54 @@ msgstr ""
 msgid "Search Results for \"%s\""
 msgstr ""
 
-#: index.php:75 single.php:44
+#: index.php:74 single.php:44
 #. Translators: %s is the author's name
 msgid "by %s"
 msgstr ""
 
-#: index.php:81 single.php:53
+#: index.php:80 single.php:53
 msgid "in"
 msgstr ""
 
-#: index.php:89
+#: index.php:88 single.php:62
 msgid "No Comment"
 msgstr ""
 
-#: index.php:90
+#: index.php:89 single.php:63
 msgid "1 Comment"
 msgstr ""
 
-#: index.php:91
+#: index.php:90 single.php:64
 msgid "% Comments"
 msgstr ""
 
-#: index.php:93 single.php:74
+#: index.php:92 single.php:66
 msgid "Comments Off"
 msgstr ""
 
-#: index.php:104 page-templates/full-width.php:47 page.php:46 single.php:82
+#: index.php:102 page-templates/full-width.php:47 page.php:46 single.php:74
 msgid "Edit"
 msgstr ""
 
-#: index.php:164 index.php:182 page-templates/full-width.php:72 page.php:71
-#: single.php:207
+#: index.php:162 index.php:180 page-templates/full-width.php:72 page.php:71
+#: single.php:199
 msgid "Not Found"
 msgstr ""
 
-#: index.php:169
+#: index.php:167
 #. Translators: %s is the search term
 msgid "Your search for \"%s\" did not return any result."
 msgstr ""
 
-#: index.php:174
+#: index.php:172
 msgid "Would you like to try another search ?"
 msgstr ""
 
-#: index.php:195
+#: index.php:193
 msgid "Previous Posts"
 msgstr ""
 
-#: index.php:201
+#: index.php:199
 msgid "Next Posts"
 msgstr ""
 
@@ -263,11 +259,11 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: page-templates/full-width.php:35 page.php:34 single.php:123
+#: page-templates/full-width.php:35 page.php:34 single.php:115
 msgid "Next page"
 msgstr ""
 
-#: page-templates/full-width.php:36 page.php:35 single.php:124
+#: page-templates/full-width.php:36 page.php:35 single.php:116
 msgid "Previous page"
 msgstr ""
 
@@ -283,39 +279,23 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: single.php:62
-msgid "No"
-msgstr ""
-
-#: single.php:64
-msgid "%"
-msgstr ""
-
-#: single.php:70 single.php:71
-msgid "Comment"
-msgstr ""
-
-#: single.php:72
-msgid "Comments"
-msgstr ""
-
-#: single.php:118
+#: single.php:110
 msgid "Pages"
 msgstr ""
 
-#: single.php:143
+#: single.php:135
 msgid "Previous Image"
 msgstr ""
 
-#: single.php:149
+#: single.php:141
 msgid "Next Image"
 msgstr ""
 
-#: single.php:157 single.php:186
+#: single.php:149 single.php:178
 msgid "Previous Post"
 msgstr ""
 
-#: single.php:163 single.php:192
+#: single.php:155 single.php:184
 msgid "Next Post"
 msgstr ""
 
