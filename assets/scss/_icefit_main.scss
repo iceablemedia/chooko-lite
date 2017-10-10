@@ -1,0 +1,230 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: top;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,blockquote:after,
+q:before,q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px;
+}
+
+/* #Lists */
+ul, ol { margin-bottom: 20px; }
+
+ul { list-style: none outside; }
+
+ol { list-style: decimal; }
+
+ol, ul.square, ul.circle, ul.disc { margin-left: 40px; }
+
+ul.square { list-style: square outside; }
+
+ul.circle { list-style: circle outside; }
+
+ul.disc	 { list-style: disc outside; }
+
+ul ul, ul ol, ol ol, ol ul { margin: 4px 0 5px 30px; }
+
+ul ul li, ul ol li, ol ol li, ol ul li { margin-bottom: 6px; }
+
+li { line-height: 18px; margin-bottom: 12px; }
+
+ul.large li { line-height: 21px; }
+
+li p { line-height: 21px; }
+
+/* #Images */
+
+img.scale-with-grid { max-width: 100%; height: auto; }
+
+/* #Buttons */
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/* #Forms */
+
+form { margin-bottom: 20px; }
+
+fieldset { margin-bottom: 20px; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	border: 1px solid #ccc;
+	padding: 6px 4px;
+	outline: none;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	font: 13px 'Pt Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #777;
+	margin: 0;
+	width: 190px;
+	max-width: 100%;
+	display: block;
+	margin-bottom: 20px;
+	background: #fff;
+}
+
+select { padding: 0; }
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+	border: 1px solid #aaa;
+	color: #444;
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+	box-shadow:  0 0 3px rgba(0,0,0,.2);
+}
+
+textarea { min-height: 60px; }
+
+label,
+legend {
+	display: block;
+	font-weight: bold;
+	font-size: 13px;
+	 }
+
+select { width: 220px; }
+
+input[type="checkbox"] { display: inline; }
+
+label span,
+legend span {
+	font-weight: normal;
+	font-size: 13px;
+	color: #444;
+}
+
+/* #Misc */
+
+sub, sup { font-size: xx-small; line-height: 100%; }
+
+sub { vertical-align: sub; }
+
+sup { vertical-align: super; }
+
+code, kbd, var, tt { font-family: 'Courier new', Courier, Monospace; }
+
+del, strike { text-decoration: line-through; }
+
+ins { text-decoration: underline; }
+
+abbr, acronym { border-bottom: 1px dotted;  }
+
+big { font-size: 140%; }
+
+/* #Base Grid */
+
+.container {
+	position: relative;
+	width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	clear: both;
+}
+
+#navbar,
+#slider-wrap {
+	width: 960px;
+}
+
+h1.page-title {
+	width: 920px;
+}
+
+#page-container {
+	width: 920px;
+	padding: 0 20px;
+	margin: 0 0 40px 0;
+}
+
+#page-container,
+#footer .container ul {
+	font-size: 1px;
+	letter-spacing: -1px;
+	word-spacing: -1px;
+}
+
+#page-container.with-sidebar.right,
+#sidebar-container.right {
+	float: right;
+}
+
+#page-container.with-sidebar.left,
+#sidebar-container.left {
+	float: left;
+}
+
+#footer .container > ul > li {
+	display: inline-block;
+	margin-left: 20px !important;
+	margin-right: 20px !important;
+	margin-bottom: 40px;
+	vertical-align: top;
+	float: none;
+	width: 200px;
+}
+
+.wp-audio-shortcode { margin-bottom: 20px; }
+
+#sidebar-container {
+	margin-left: 20px !important;
+	margin-right: 20px !important;
+}
+
+#page-container div h1,
+#page-container div h2,
+#page-container div h3,
+#page-container div h4,
+#page-container div h5,
+#page-container div h6,
+#page-container .page-title {
+	margin-top: 0px;
+}
+
+/* With Sidebar: Container= 720 */
+#page-container.with-sidebar { width: 680px; padding: 0 20px; }
+
+#sidebar-container { width: 200px; }
