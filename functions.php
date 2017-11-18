@@ -200,15 +200,9 @@ add_action( 'init', 'chooko_editor_styles' );
  */
 function chooko_scripts() {
 
-	if ( function_exists( 'get_theme_file_uri' ) ) : // WordPress 4.7
-		wp_enqueue_script( 'chooko', get_theme_file_uri( '/js/chooko.min.js' ), array( 'jquery', 'hoverIntent' ), CHOOKO_THEME_VERSION );
-		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
-		wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), CHOOKO_THEME_VERSION );
-	else : // Support for WordPress <4.7 (to be removed after 4.9 is released)
-		wp_enqueue_script( 'chooko', CHOOKO_THEME_DIR_URI . '/js/chooko.min.js', array( 'jquery', 'hoverIntent' ), CHOOKO_THEME_VERSION );
-		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
-		wp_enqueue_script( 'html5shiv', CHOOKO_THEME_DIR_URI . '/js/html5.js', array(), CHOOKO_THEME_VERSION );
-	endif;
+	wp_enqueue_script( 'chooko', get_theme_file_uri( '/js/chooko.min.js' ), array( 'jquery', 'hoverIntent' ), CHOOKO_THEME_VERSION );
+	// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
+	wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), CHOOKO_THEME_VERSION );
 
 	// Add conditional for HTML5Shiv to only load for IE < 9
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
