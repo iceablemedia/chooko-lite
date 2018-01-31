@@ -2,9 +2,9 @@
 
 **Contributors:** iceable
 **Requires at least:** WordPress 4.7
-**Tested up to:** WordPress 4.9
-**Stable tag:** 1.2.15
-**Version:** 1.2.15
+**Tested up to:** WordPress 4.9.2
+**Stable tag:** 1.2.16
+**Version:** 1.2.16
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 **Tags:** one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, footer-widgets, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, food-and-drink, photography
