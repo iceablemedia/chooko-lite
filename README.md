@@ -52,7 +52,7 @@ Chooko Lite is the lite version of [Chooko Pro](https://www.iceablethemes.com/sh
 ### Translation
 
 Bundled translations (GPL Licensed):
-* French (fr_FR) translation: Copyright 2013-2017, Iceable Themes (https://www.iceablethemes.com)
+* French (fr_FR) translation: Copyright 2013-2018, Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
 
 Translating this theme into your own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
 
@@ -64,7 +64,7 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 ## Copyright
 
-Chooko Lite WordPress Theme, Copyright 2013-2017 Iceable Themes (https://www.iceablethemes.com)  
+Chooko Lite WordPress Theme, Copyright 2013-2018 Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)  
 Chooko Lite is distributed under the terms of the GNU GPL
 
 Chooko Lite bundles the following third-party resources:
@@ -79,6 +79,10 @@ Source: https://github.com/aFarkas/html5shiv
 
 
 ## Changelog
+
+### 1.2.16
+January 31th, 2018
+* Updated copyright
 
 ### 1.2.15
 November 18th, 2017

@@ -3,7 +3,7 @@
  *
  * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2017 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2018 Iceable Media - Mathieu Sarrasin
  *
  * Footer Template
  *
@@ -33,7 +33,7 @@ endif;
 
 				<?php
 				printf(
-					// Translators: %1$s is the copyright date, %2$s is the site name (e.g. Copyright © 2017, My Website)
+					// Translators: %1$s is the copyright date, %2$s is the site name (e.g. Copyright © 2018, My Website)
 					esc_html__( 'Copyright &copy; %1$s %2$s.', 'chooko-lite' ),
 					esc_html( date( 'Y' ) ),
 					esc_html( get_bloginfo( 'name' ) )
