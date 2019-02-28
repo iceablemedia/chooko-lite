@@ -2,7 +2,7 @@
  *
  * Chooko Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2013-2018 Iceable Media - Mathieu Sarrasin
+ * Copyright 2013-2019 Iceable Media - Mathieu Sarrasin
  *
  * Theme Customizer sections functions
  *

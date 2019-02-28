@@ -58,6 +58,10 @@ Source: https://github.com/aFarkas/html5shiv
 
 ## Changelog
 
+### 1.2.17
+
+* Updated copyright
+
 ### 1.2.16
 January 31th, 2018
 * Updated copyright
