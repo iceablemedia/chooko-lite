@@ -1,4 +1,4 @@
-# Copyright (C) 2018 Iceable Media
+# Copyright (C) 2020 Iceable Themes
 # This file is distributed under the GNU General Public License v2 (GPLv2).
 msgid ""
 msgstr ""
@@ -320,7 +320,7 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Iceable Media"
+msgid "Iceable Themes"
 msgstr ""
 
 #. Author URI of the plugin/theme
